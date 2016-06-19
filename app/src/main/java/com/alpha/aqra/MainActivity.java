@@ -20,20 +20,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        backSound = MediaPlayer.create(this, R.raw.intro);
 
-        try{
+
+        /**try{
             if(backSound!=null){
+                backSound = MediaPlayer.create(this, R.raw.intro);
                 backSound.start();
-                backSound.prepareAsync();
                 backSound.setLooping(true);
             }else if(backSound.isPlaying()){
-                backSound.seekTo(length);
+                backSound.seekTo(backSound.getCurrentPosition());
                 backSound.start();
             }
         }catch(NullPointerException n){
 
-        }
+        }**/
 
     }
 
@@ -84,19 +84,19 @@ public class MainActivity extends AppCompatActivity {
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            stopMusic();
+            //stopMusic();
         } else if (v.getId() == R.id.menu_latihan) {
             Intent i = new Intent(MainActivity.this, latihanPelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            stopMusic();
+            //stopMusic();
         } else if (v.getId() == R.id.metodeIqro) {
             Intent i = new Intent(MainActivity.this, MetodeIqro.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            stopMusic();
+            //stopMusic();
         }
     }
 

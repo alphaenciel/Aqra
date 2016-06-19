@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.iqro.agung.projectiqro.MetodeIqro"
+    tools:context="com.alpha.aqra.MetodeIqro"
     android:background="@drawable/bg_metode_iqro2">
 
 

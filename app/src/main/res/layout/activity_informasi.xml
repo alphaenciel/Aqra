@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_informasi"
     android:padding="0dp"
-    tools:context="com.iqro.agung.projectiqro.Informasi">
+    tools:context="com.alpha.aqra.Informasi">
 
     <TextView
         android:layout_width="300dp"
@@ -13,30 +13,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FFFFFF"
         android:gravity="start"
-        android:textAlignment="textStart"
-        android:text="Huruf Hijaiyah merupakan huruf
-Arab yang terdapat pada Al-Qur’an.
-Huruf Hijaiyah berjumlah 28 huruf,
-huruf-huruf tersebut digunakan
-dalam Al-Qur’an yang terbagi ke
-dalam 2 bagian yaitu Al-qomariyah
-yang berarti jelas dan Al-syamsiyah
-yang berarti tidak jelas (samar).
-Huruf tersebut dipergunakan pada
-penulis kitab suci Al-Qur’an.
-Mengenal huruf Hijaiyah merupakan
-salah satu latihan mendasar untuk
-belajar dan memperoleh
-pengetahuan tentang Al-Qur’an
-terutama mengenai pelafalan huruf
-Hijaiyah yang baik dan benar.  "
+        android:textAlignment="center"
+        android:text="Huruf Hijaiyah merupakan huruf Arab yang terdapat pada Al-Qur’an. Huruf Hijaiyah berjumlah 28 huruf, huruf-huruf tersebut digunakan dalam Al-Qur’an yang terbagi ke dalam 2 bagian yaitu Al-qomariyah yang berarti jelas dan Al-syamsiyah yang berarti tidak jelas (samar). Huruf tersebut dipergunakan pada penulis kitab suci Al-Qur’an. Mengenal huruf Hijaiyah merupakan salah satu latihan mendasar untuk belajar dan memperoleh pengetahuan tentang Al-Qur’an terutama mengenai pelafalan huruf Hijaiyah yang baik dan benar.  "
         android:id="@+id/txt_info"
-        android:layout_alignParentTop="true"
+        android:textSize="18dp"
+        android:textIsSelectable="false"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="190dp"
-        android:textSize="18dp"
-        android:textIsSelectable="false" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp" />
 
     <ImageButton
         android:layout_width="50dp"

@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:padding="0dp"
     android:background="@drawable/bg_home"
-    tools:context="com.iqro.agung.projectiqro.MainActivity">
+    tools:context="com.alpha.aqra.MainActivity">
 
     <ImageButton
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:id="@+id/pelafalan"
         android:background="@drawable/btn_menu_pelafalan"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="160dp"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/metodeIqro"
         android:layout_toStartOf="@+id/metodeIqro"
@@ -58,9 +58,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="-5dp"
         android:layout_marginBottom="-5dp"
-        android:onClick="onButtonHomeClick" />
+        android:onClick="onButtonHomeClick"
+        android:layout_marginRight="-5dp" />
 
 
 </RelativeLayout>

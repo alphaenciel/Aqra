@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_metode_iqro_1"
     android:orientation="vertical"
-    tools:context="com.iqro.agung.projectiqro.MetodeIqro1" >
+    tools:context="com.alpha.aqra.MetodeIqro1" >
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
@@ -16,7 +16,7 @@
         android:layout_marginLeft="0dp"
         android:layout_alignParentTop="true" />
 
-    <com.iqro.agung.projectiqro.CirclePageIndicator
+    <com.alpha.aqra.CirclePageIndicator
         android:id="@+id/pagerIndicator"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

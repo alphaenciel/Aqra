@@ -7,7 +7,7 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:paddingTop="16dp"
-    tools:context="com.iqro.agung.projectiqro.latihanPelafalan"
+    tools:context="com.alpha.aqra.latihanPelafalan"
     android:background="@drawable/bg_latihan_pelafalan2">
 
     <ImageView

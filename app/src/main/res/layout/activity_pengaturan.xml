@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="5dp"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.iqro.agung.projectiqro.Pengaturan"
+    tools:context="com.alpha.aqra.Pengaturan"
     android:background="@drawable/bg_pengaturan">
 
     <ImageButton
