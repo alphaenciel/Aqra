@@ -15,6 +15,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:hardwareAccelerated="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Informasi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pengaturan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pelafalan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".latihanPelafalan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MetodeIqro"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MetodeIqro1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MetodeIqro2"
+            android:screenOrientation="portrait" />
+        <activity android:name=".CobaSpeech">
+
+        </activity>
     </application>
 
 </manifest>
