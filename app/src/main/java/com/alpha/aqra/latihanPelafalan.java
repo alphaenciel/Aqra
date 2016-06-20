@@ -42,11 +42,11 @@ public class latihanPelafalan extends AppCompatActivity {
     }
 
     public void OnButtonPelafalanBack(View v){
+        //stat.setStatus("");
         Intent i = new Intent(latihanPelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
-        stat.setStatus("");
     }
 
     public void onBackPressed() {
