@@ -16,8 +16,7 @@
         android:id="@+id/hasil_rekam"
         android:layout_marginTop="147dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/ba_03" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -342,33 +341,50 @@
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:id="@+id/latihan_instruksi"
         android:background="@drawable/ket_rekam_audio2"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/latihan_btnHome"
         android:layout_toRightOf="@+id/latihan_ain"
-        android:layout_toEndOf="@+id/latihan_ain" />
+        android:layout_toEndOf="@+id/latihan_ain"
+        android:layout_marginBottom="10dp" />
 
     <ImageView
         android:layout_width="90dp"
         android:layout_height="80dp"
         android:id="@+id/latihan_status"
-        android:background="@drawable/ket_voice_berhasil"
         android:layout_alignTop="@+id/latihan_instruksi"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="-8dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:id="@+id/progressBar"
+        android:progressDrawable="@drawable/blueprogress"
+        android:layout_alignBottom="@+id/latihan_status"
+        android:layout_alignRight="@+id/latihan_ya"
+        android:layout_alignEnd="@+id/latihan_ya"
+        android:layout_marginRight="-10dp"
+        android:layout_marginBottom="20dp" />
+
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/latihan_tempSelected" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView"
-        android:layout_alignBottom="@+id/hasil_rekam"
-        android:layout_toRightOf="@+id/latihan_btnHome"
-        android:layout_toEndOf="@+id/latihan_btnHome"
-        android:textColor="#ffffff" />
+        android:background="@drawable/text_ketepatan_rate"
+        android:layout_above="@+id/progressBar"
+        android:layout_toLeftOf="@+id/latihan_instruksi"
+        android:layout_toStartOf="@+id/latihan_instruksi"
+        android:layout_marginRight="5dp" />
 
 </RelativeLayout>
