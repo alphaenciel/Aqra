@@ -214,6 +214,10 @@ public class latihanPelafalan extends AppCompatActivity {
     }
 
     public void selectedBeforeHijayah(){
+        if(selected.getBackground().equals(R.drawable.hijayah_putih_ba)){
+
+        }
+
         if (selected.getId() == R.id.latihan_alif){
             selected.setBackgroundResource(R.drawable.hijayah_putih_a);
         }else if (selected.getId() == R.id.latihan_ba){

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_metode_iqro_1"
     android:orientation="vertical"
-    tools:context="com.alpha.aqra.MetodeIqro1" >
+    tools:context="com.alpha.aqra.MetodeIqro1"
+    android:onClick="OnClickMetodeIqro1">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

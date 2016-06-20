@@ -1,6 +1,7 @@
 package com.alpha.aqra;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +20,7 @@ public class MetodeIqro1 extends FragmentActivity {
     public PageIndicator mIndicator;
     private ViewPager awesomePager;
     private PagerAdapter pm;
+    IqroTitle iqroTitle;
 
     ArrayList<Category1> codeCategory;
 
@@ -122,6 +124,7 @@ public class MetodeIqro1 extends FragmentActivity {
             return this.fragments.size();
         }
     }
+
     public void OnClickSlideIqro1(View v){
         if(v.getId() == R.id.btnBackHome) {
             Intent i = new Intent(MetodeIqro1.this, MainActivity.class);
@@ -136,5 +139,12 @@ public class MetodeIqro1 extends FragmentActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+    }
+
+    public void OnClickMetodeIqro1(View v){
+        if(iqroTitle.getTitle().equals("1")){
+            MediaPlayer mp = MediaPlayer.create(this,R.raw.slide1_1);
+            mp.start();
+        }
     }
 }

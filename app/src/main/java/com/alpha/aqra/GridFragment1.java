@@ -6,6 +6,7 @@ package com.alpha.aqra;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,6 +27,7 @@ public class GridFragment1 extends Fragment {
     private GridAdapter1 mGridAdapter1;
     GridItems1[] GridItems1 = {};
     private Activity activity;
+    IqroTitle iqroTitle;
 
 
     public GridFragment1(GridItems1[] GridItems1, Activity activity) {
@@ -71,5 +73,8 @@ public class GridFragment1 extends Fragment {
                 "Position Clicked: - " + position + " & " + "Text is: - "
                         + GridItems1[position].title, Toast.LENGTH_LONG).show();
         Log.e("TAG", "POSITION CLICKED " + position);
+
+        iqroTitle.setTitle("1");
     }
+
 }
