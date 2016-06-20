@@ -25,6 +25,7 @@ public class latihanPelafalan extends AppCompatActivity {
     ImageButton rekam, selected;
     TextView txtTemp;
     String tmpStr="";
+    BackSound stat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class latihanPelafalan extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+        stat.setStatus("");
     }
 
     public void onBackPressed() {

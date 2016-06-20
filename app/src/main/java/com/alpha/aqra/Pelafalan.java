@@ -14,6 +14,7 @@ public class Pelafalan extends AppCompatActivity {
     ImageView selectedImg;
     ImageView hijayahBesar;
     ImageButton btn_auto;
+    BackSound stat;
 
     Handler h = new Handler();
     int delay = 1000; //milliseconds
@@ -38,13 +39,14 @@ public class Pelafalan extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
-
+        //stat.setStatus("");
     }
     public void OnButtonPelafalanBack(View v){
         Intent i = new Intent(Pelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+        //stat.setStatus("");
     }
 
     public void onCLickAutoPelafalan(View v){

@@ -7,6 +7,7 @@ import android.view.View;
 
 public class MetodeIqro extends AppCompatActivity {
 
+    BackSound stat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,12 +16,12 @@ public class MetodeIqro extends AppCompatActivity {
 
     public void onCLickIqro(View v){
         if(v.getId() == R.id.btn_iqro1){
-            Intent i = new Intent(MetodeIqro.this,MetodeIqro1.class);
+            Intent i = new Intent(MetodeIqro.this,Plan2Iqro1.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
         }else if(v.getId() == R.id.btn_iqro2){
-            Intent i = new Intent(MetodeIqro.this,MetodeIqro2.class);
+            Intent i = new Intent(MetodeIqro.this,Plan2Iqro2.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
@@ -29,6 +30,7 @@ public class MetodeIqro extends AppCompatActivity {
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
+            //stat.setStatus("");
         }
     }
 
