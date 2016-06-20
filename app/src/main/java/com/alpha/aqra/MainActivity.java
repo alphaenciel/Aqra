@@ -62,10 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonHomeClick(View v) {
         if (v.getId() == R.id.informasi) {
+            pauseMusic();
             Intent i = new Intent(MainActivity.this, Informasi.class);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         } else if (v.getId() == R.id.pengaturan) {
+            pauseMusic();
             Intent i = new Intent(MainActivity.this, Pengaturan.class);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
