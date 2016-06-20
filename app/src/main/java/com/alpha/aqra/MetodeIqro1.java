@@ -130,4 +130,11 @@ public class MetodeIqro1 extends FragmentActivity {
             finish();
         }
     }
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(MetodeIqro1.this,MetodeIqro.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
+    }
 }

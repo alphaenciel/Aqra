@@ -1,35 +1,31 @@
 package com.alpha.aqra;
 
-/**
- * Created by alphaenciel on 6/19/2016.
- */
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
 
+/**
+ * Created by alphaenciel on 6/20/2016.
+ */
 @SuppressLint("ValidFragment")
-public class GridFragment1 extends Fragment {
+public class GridFragment2 extends Fragment {
 
     private GridView mGridView;
-    private GridAdapter1 mGridAdapter1;
-    GridItems1[] GridItems1 = {};
+    private GridAdapter2 mGridAdapter2;
+    GridItems2[] GridItems2 = {};
     private Activity activity;
 
 
-    public GridFragment1(GridItems1[] GridItems1, Activity activity) {
-        this.GridItems1 = GridItems1;
+    public GridFragment2(GridItems2[] GridItems2, Activity activity) {
+        this.GridItems2 = GridItems2;
         this.activity = activity;
 
     }
@@ -38,8 +34,8 @@ public class GridFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view;
-        view = inflater.inflate(R.layout.grid1, container, false);
-        mGridView = (GridView) view.findViewById(R.id.gridView);
+        view = inflater.inflate(R.layout.grid2, container, false);
+        mGridView = (GridView) view.findViewById(R.id.gridView2);
         return view;
     }
 
@@ -49,12 +45,12 @@ public class GridFragment1 extends Fragment {
 
         if (activity != null) {
 
-            mGridAdapter1 = new GridAdapter1(activity, GridItems1);
+            mGridAdapter2 = new GridAdapter2(activity, GridItems2);
             if (mGridView != null) {
-                mGridView.setAdapter(mGridAdapter1);
+                mGridView.setAdapter(mGridAdapter2);
             }
 
-            mGridView.setOnItemClickListener(new OnItemClickListener() {
+            mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView parent, View view,
                                         int position, long id) {
@@ -69,7 +65,7 @@ public class GridFragment1 extends Fragment {
         Toast.makeText(
                 activity,
                 "Position Clicked: - " + position + " & " + "Text is: - "
-                        + GridItems1[position].title, Toast.LENGTH_LONG).show();
+                        + GridItems2[position].title, Toast.LENGTH_LONG).show();
         Log.e("TAG", "POSITION CLICKED " + position);
     }
 }
