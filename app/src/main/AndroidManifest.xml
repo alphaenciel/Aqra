@@ -47,9 +47,6 @@
         <activity
             android:name=".MetodeIqro2"
             android:screenOrientation="portrait" />
-        <activity android:name=".CobaSpeech">
-
-        </activity>
     </application>
 
 </manifest>

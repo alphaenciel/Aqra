@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         android:id="@+id/pelafalan"
         android:background="@drawable/btn_menu_pelafalan"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/metodeIqro"
         android:layout_toStartOf="@+id/metodeIqro"
