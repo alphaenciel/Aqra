@@ -28,6 +28,9 @@ public class GridFragment1 extends Fragment {
     GridItems1[] GridItems1 = {};
     private Activity activity;
     IqroTitle iqroTitle;
+    SoundIqro1 soundIqro1;
+    MediaPlayer so;
+    Context context;
 
 
     public GridFragment1(GridItems1[] GridItems1, Activity activity) {
@@ -50,7 +53,7 @@ public class GridFragment1 extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         if (activity != null) {
-
+        //so = MediaPlayer.create(context,R.raw.slide1_1);
             mGridAdapter1 = new GridAdapter1(activity, GridItems1);
             if (mGridView != null) {
                 mGridView.setAdapter(mGridAdapter1);
@@ -60,21 +63,23 @@ public class GridFragment1 extends Fragment {
                 @Override
                 public void onItemClick(AdapterView parent, View view,
                                         int position, long id) {
-                    onGridItemClick((GridView) parent, view, position, id);
+                   onGridItemClick((GridView) parent, view, position, id);
+                    //if(position==1){so.start();}
+                    //if(position==1)soundIqro1.play(context, R.raw.slide1_1);
                 }
             });
         }
     }
 
     public void onGridItemClick(GridView g, View v, int position, long id) {
-
+        soundIqro1.play(context, R.raw.slide1_1);
         Toast.makeText(
                 activity,
                 "Position Clicked: - " + position + " & " + "Text is: - "
                         + GridItems1[position].title, Toast.LENGTH_LONG).show();
         Log.e("TAG", "POSITION CLICKED " + position);
 
-        iqroTitle.setTitle("1");
+        //iqroTitle.setTitle("1");
     }
 
 }

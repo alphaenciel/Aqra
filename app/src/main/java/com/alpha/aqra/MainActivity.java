@@ -18,16 +18,24 @@ public class MainActivity extends AppCompatActivity {
 
     private int length = 0;
     private MediaPlayer backSound;
+    BackSound stat;
+    String status="";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /**status=stat.getStatus();
+        if(status==""){
+            backSound = MediaPlayer.create(getApplicationContext(), R.raw.intro);
+            //backSound.setLooping(true);
+            backSound.start();
+        }**/
         backSound = MediaPlayer.create(getApplicationContext(), R.raw.intro);
         backSound.setLooping(true);
         backSound.start();
+
 
     }
 
@@ -66,11 +74,13 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(MainActivity.this, Informasi.class);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            //stat.setStatus("playing");
         } else if (v.getId() == R.id.pengaturan) {
             pauseMusic();
             Intent i = new Intent(MainActivity.this, Pengaturan.class);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            //stat.setStatus("playing");
         } else if (v.getId() == R.id.pelafalan) {
             stopMusic();
             Intent i = new Intent(MainActivity.this, Pelafalan.class);

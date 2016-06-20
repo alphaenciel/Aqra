@@ -1,5 +1,6 @@
 package com.alpha.aqra;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -8,7 +9,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,8 +27,20 @@ public class MetodeIqro1 extends FragmentActivity {
     public PageIndicator mIndicator;
     private ViewPager awesomePager;
     private PagerAdapter pm;
+    /**
     IqroTitle iqroTitle;
+    GridView aGridView;
+    private GridAdapter1 aGridAdapter1;
+    private Activity activity;
+    GridItems1[] GridItems1 = {};
+    MediaPlayer mp;
 
+    public MetodeIqro1(GridItems1[] GridItems1, Activity activity) {
+        this.GridItems1 = GridItems1;
+        this.activity = activity;
+
+    }
+ **/
     ArrayList<Category1> codeCategory;
 
     String deviceNames[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -31,6 +50,15 @@ public class MetodeIqro1 extends FragmentActivity {
             "50", "51", "52","53", "54", "55", "56", "57", "58", "59", "60", "61", "62",
             "63", "64", "65", "66", "67", "68", "69", "70", "71", "72","73", "74", "75", "76", "77", "78", "79", "80", "81",
             "82", "83", "84", "85", "86", "87", "88", "89", "90" };
+/**
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view;
+        view = inflater.inflate(R.layout.grid1, container, false);
+        aGridView = (GridView) view.findViewById(R.id.gridView);
+        return view;
+    }
+**/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +67,26 @@ public class MetodeIqro1 extends FragmentActivity {
         awesomePager = (ViewPager) findViewById(R.id.pager);
         mIndicator = (PageIndicator) findViewById(R.id.pagerIndicator);
 
+        //coba audio
+/**
+        aGridView = (GridView)findViewById(R.id.gridView);
+        mp = MediaPlayer.create(this,R.raw.slide1_1);
+        if (activity != null) {
+
+            aGridAdapter1 = new GridAdapter1(activity, GridItems1);
+            if (aGridView != null) {
+                aGridView.setAdapter(aGridAdapter1);
+            }
+
+            aGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView parent, View view,
+                                        int position, long id) {
+                    onGridItemClick((GridView) parent, view, position, id);
+                }
+            });
+        }
+**/
         ArrayList<String> a = new ArrayList<String>();
 
         Category1 m = new Category1();
@@ -140,11 +188,24 @@ public class MetodeIqro1 extends FragmentActivity {
         startActivity(i);
         finish();
     }
-
+/**
     public void OnClickMetodeIqro1(View v){
         if(iqroTitle.getTitle().equals("1")){
             MediaPlayer mp = MediaPlayer.create(this,R.raw.slide1_1);
             mp.start();
         }
     }
+ **/
+/**
+    public void onGridItemClick(GridView g, View v, int position, long id) {
+        //if(GridItems1[position].title=="1"){mp = MediaPlayer.create(this,R.raw.slide1_1);mp.start();}
+        Toast.makeText(
+                activity,
+                "Position Clicked: - " + position + " & " + "Text is: - "
+                        + GridItems1[position].title, Toast.LENGTH_LONG).show();
+        Log.e("TAG", "POSITION CLICKED " + position);
+
+        iqroTitle.setTitle("1");
+    }
+ **/
 }

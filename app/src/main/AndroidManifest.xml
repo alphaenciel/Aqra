@@ -48,6 +48,12 @@
         <activity
             android:name=".MetodeIqro2"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".Plan2Iqro1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Plan2Iqro2"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
