@@ -3,17 +3,21 @@ package com.alpha.aqra;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton i;
-    MediaPlayer backSound;
+
     private int length = 0;
+    private MediaPlayer backSound;
 
 
     @Override
@@ -21,25 +25,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        /**try{
-            if(backSound!=null){
-                backSound = MediaPlayer.create(this, R.raw.intro);
-                backSound.start();
-                backSound.setLooping(true);
-            }else if(backSound.isPlaying()){
-                backSound.seekTo(backSound.getCurrentPosition());
-                backSound.start();
-            }
-        }catch(NullPointerException n){
-
-        }**/
+        backSound = MediaPlayer.create(getApplicationContext(), R.raw.intro);
+        backSound.setLooping(true);
+        backSound.start();
 
     }
 
     public void pauseMusic()
     {
-        if(backSound.isPlaying())
+       if(backSound.isPlaying())
         {
             backSound.pause();
             length=backSound.getCurrentPosition();
@@ -69,38 +63,35 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonHomeClick(View v) {
         if (v.getId() == R.id.informasi) {
             Intent i = new Intent(MainActivity.this, Informasi.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            finish();
         } else if (v.getId() == R.id.pengaturan) {
             Intent i = new Intent(MainActivity.this, Pengaturan.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            finish();
         } else if (v.getId() == R.id.pelafalan) {
+            stopMusic();
             Intent i = new Intent(MainActivity.this, Pelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            //stopMusic();
         } else if (v.getId() == R.id.menu_latihan) {
+            stopMusic();
             Intent i = new Intent(MainActivity.this, latihanPelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            //stopMusic();
         } else if (v.getId() == R.id.metodeIqro) {
+            stopMusic();
             Intent i = new Intent(MainActivity.this, MetodeIqro.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
-            //stopMusic();
         }
     }
 
     private void exit() {
+        pauseMusic();
         ExitDialog exitDialog = new ExitDialog(this);
         exitDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         exitDialog.show();

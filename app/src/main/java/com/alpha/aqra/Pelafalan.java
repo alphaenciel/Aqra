@@ -29,7 +29,7 @@ public class Pelafalan extends AppCompatActivity {
         selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_a);
         btn_auto=(ImageButton)findViewById(R.id.pelafalan_btn_automatic);
         selectedImg.setBackgroundResource(R.drawable.hijayah_orange_a);
-        sp = MediaPlayer.create(this,R.raw.sp_1);sp.start();
+       // sp = MediaPlayer.create(this,R.raw.sp_1);sp.start();
     }
 
     @Override

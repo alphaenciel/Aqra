@@ -11,6 +11,7 @@ public class ExitDialog extends Dialog implements View.OnClickListener {
     public Activity c;
     public Dialog d;
     public ImageButton yes, no;
+    MainActivity mainActivity;
 
     public ExitDialog(Activity a) {
         super(a);
@@ -35,6 +36,7 @@ public class ExitDialog extends Dialog implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_yes:
                 c.finish();
+                System.exit(0);
                 break;
             case R.id.btn_no:
                 dismiss();
