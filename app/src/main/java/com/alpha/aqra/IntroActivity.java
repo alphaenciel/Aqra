@@ -13,9 +13,12 @@ public class IntroActivity extends AppCompatActivity {
     private static int splashInterval = 4000;
     private ImageView intro;
 
+    BackSound stat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        stat.SoundPlayer(this,R.raw.intro);
         setContentView(R.layout.activity_intro);
 
         intro = (ImageView) findViewById(R.id.logo);

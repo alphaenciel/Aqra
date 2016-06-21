@@ -121,4 +121,14 @@
         android:layout_toEndOf="@+id/btn_twitter"
         android:layout_marginLeft="-2dp" />
 
+    <SeekBar
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar1"
+        android:progressDrawable="@drawable/seekbar_progressbar"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignRight="@+id/btn_menu_utama"
+        android:layout_alignEnd="@+id/btn_menu_utama"
+        android:visibility="invisible" />
+
 </RelativeLayout>

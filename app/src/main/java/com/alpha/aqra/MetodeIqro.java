@@ -16,16 +16,19 @@ public class MetodeIqro extends AppCompatActivity {
 
     public void onCLickIqro(View v){
         if(v.getId() == R.id.btn_iqro1){
+            stat.SoundPlayer(this,R.raw.intro);
             Intent i = new Intent(MetodeIqro.this,Plan2Iqro1.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
         }else if(v.getId() == R.id.btn_iqro2){
+            stat.SoundPlayer(this,R.raw.intro);
             Intent i = new Intent(MetodeIqro.this,Plan2Iqro2.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
         }else if(v.getId() == R.id.btn_home_iqro){
+            stat.SoundPlayer(this,R.raw.intro);
             Intent i = new Intent(MetodeIqro.this,MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -36,6 +39,7 @@ public class MetodeIqro extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
         Intent i = new Intent(MetodeIqro.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);

@@ -42,6 +42,7 @@ public class Pelafalan extends AppCompatActivity {
         //stat.setStatus("");
     }
     public void OnButtonPelafalanBack(View v){
+        stat.SoundPlayer(this,R.raw.intro);
         Intent i = new Intent(Pelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);

@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class Informasi extends AppCompatActivity {
 
     TextView info;
+    //BackSound backSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
