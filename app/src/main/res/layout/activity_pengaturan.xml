@@ -129,6 +129,6 @@
         android:layout_alignTop="@+id/imageButton"
         android:layout_alignRight="@+id/btn_menu_utama"
         android:layout_alignEnd="@+id/btn_menu_utama"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
 </RelativeLayout>
