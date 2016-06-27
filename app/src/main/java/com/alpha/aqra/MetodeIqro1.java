@@ -28,20 +28,8 @@ public class MetodeIqro1 extends FragmentActivity {
     private ViewPager awesomePager;
     private PagerAdapter pm;
     BackSound stat;
-    /**
-    IqroTitle iqroTitle;
-    GridView aGridView;
-    private GridAdapter1 aGridAdapter1;
-    private Activity activity;
-    GridItems1[] GridItems1 = {};
-    MediaPlayer mp;
+    SoundIqro1 soundIqro1;
 
-    public MetodeIqro1(GridItems1[] GridItems1, Activity activity) {
-        this.GridItems1 = GridItems1;
-        this.activity = activity;
-
-    }
- **/
     ArrayList<Category1> codeCategory;
 
     String deviceNames[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -51,15 +39,7 @@ public class MetodeIqro1 extends FragmentActivity {
             "50", "51", "52","53", "54", "55", "56", "57", "58", "59", "60", "61", "62",
             "63", "64", "65", "66", "67", "68", "69", "70", "71", "72","73", "74", "75", "76", "77", "78", "79", "80", "81",
             "82", "83", "84", "85", "86", "87", "88", "89", "90" };
-/**
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view;
-        view = inflater.inflate(R.layout.grid1, container, false);
-        aGridView = (GridView) view.findViewById(R.id.gridView);
-        return view;
-    }
-**/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,26 +48,6 @@ public class MetodeIqro1 extends FragmentActivity {
         awesomePager = (ViewPager) findViewById(R.id.pager);
         mIndicator = (PageIndicator) findViewById(R.id.pagerIndicator);
 
-        //coba audio
-/**
-        aGridView = (GridView)findViewById(R.id.gridView);
-        mp = MediaPlayer.create(this,R.raw.slide1_1);
-        if (activity != null) {
-
-            aGridAdapter1 = new GridAdapter1(activity, GridItems1);
-            if (aGridView != null) {
-                aGridView.setAdapter(aGridAdapter1);
-            }
-
-            aGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView parent, View view,
-                                        int position, long id) {
-                    onGridItemClick((GridView) parent, view, position, id);
-                }
-            });
-        }
-**/
         ArrayList<String> a = new ArrayList<String>();
 
         Category1 m = new Category1();
@@ -181,6 +141,33 @@ public class MetodeIqro1 extends FragmentActivity {
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
+            soundIqro1.sound_a.stop();soundIqro1.sound_a.release();
+            soundIqro1.sound_ain.stop();soundIqro1.sound_ain.release();
+            soundIqro1.sound_ba.stop();soundIqro1.sound_ba.release();
+            soundIqro1.sound_da.stop();soundIqro1.sound_da.release();
+            soundIqro1.sound_dho.stop();soundIqro1.sound_dho.release();
+            soundIqro1.sound_dza.stop();soundIqro1.sound_dza.release();
+            soundIqro1.sound_fa.stop();soundIqro1.sound_fa.release();
+            soundIqro1.sound_gho.stop();soundIqro1.sound_gho.release();
+            soundIqro1.sound_ha.stop();soundIqro1.sound_ha.release();
+            soundIqro1.sound_ho.stop();soundIqro1.sound_ho.release();
+            soundIqro1.sound_jai.stop();soundIqro1.sound_jai.release();
+            soundIqro1.sound_ka.stop();soundIqro1.sound_ka.release();
+            soundIqro1.sound_kha.stop();soundIqro1.sound_kha.release();
+            soundIqro1.sound_la.stop();soundIqro1.sound_la.release();
+            soundIqro1.sound_ma.stop();soundIqro1.sound_ma.release();
+            soundIqro1.sound_na.stop();soundIqro1.sound_na.release();
+            soundIqro1.sound_qo.stop();soundIqro1.sound_qo.release();
+            soundIqro1.sound_ro.stop();soundIqro1.sound_ro.release();
+            soundIqro1.sound_sa.stop();soundIqro1.sound_sa.release();
+            soundIqro1.sound_sya.stop();soundIqro1.sound_sya.release();
+            soundIqro1.sound_syo.stop();soundIqro1.sound_syo.release();
+            soundIqro1.sound_ta.stop();soundIqro1.sound_ta.release();
+            soundIqro1.sound_tho.stop();soundIqro1.sound_tho.release();
+            soundIqro1.sound_to.stop();soundIqro1.sound_to.release();
+            soundIqro1.sound_tsa.stop();soundIqro1.sound_tsa.release();
+            soundIqro1.sound_ya.stop();soundIqro1.sound_ya.release();
+            soundIqro1.sound_za.stop();soundIqro1.sound_za.release();
         }
     }
     @Override
@@ -189,25 +176,32 @@ public class MetodeIqro1 extends FragmentActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+        soundIqro1.sound_a.stop();soundIqro1.sound_a.release();
+        soundIqro1.sound_ain.stop();soundIqro1.sound_ain.release();
+        soundIqro1.sound_ba.stop();soundIqro1.sound_ba.release();
+        soundIqro1.sound_da.stop();soundIqro1.sound_da.release();
+        soundIqro1.sound_dho.stop();soundIqro1.sound_dho.release();
+        soundIqro1.sound_dza.stop();soundIqro1.sound_dza.release();
+        soundIqro1.sound_fa.stop();soundIqro1.sound_fa.release();
+        soundIqro1.sound_gho.stop();soundIqro1.sound_gho.release();
+        soundIqro1.sound_ha.stop();soundIqro1.sound_ha.release();
+        soundIqro1.sound_ho.stop();soundIqro1.sound_ho.release();
+        soundIqro1.sound_jai.stop();soundIqro1.sound_jai.release();
+        soundIqro1.sound_ka.stop();soundIqro1.sound_ka.release();
+        soundIqro1.sound_kha.stop();soundIqro1.sound_kha.release();
+        soundIqro1.sound_la.stop();soundIqro1.sound_la.release();
+        soundIqro1.sound_ma.stop();soundIqro1.sound_ma.release();
+        soundIqro1.sound_na.stop();soundIqro1.sound_na.release();
+        soundIqro1.sound_qo.stop();soundIqro1.sound_qo.release();
+        soundIqro1.sound_ro.stop();soundIqro1.sound_ro.release();
+        soundIqro1.sound_sa.stop();soundIqro1.sound_sa.release();
+        soundIqro1.sound_sya.stop();soundIqro1.sound_sya.release();
+        soundIqro1.sound_syo.stop();soundIqro1.sound_syo.release();
+        soundIqro1.sound_ta.stop();soundIqro1.sound_ta.release();
+        soundIqro1.sound_tho.stop();soundIqro1.sound_tho.release();
+        soundIqro1.sound_to.stop();soundIqro1.sound_to.release();
+        soundIqro1.sound_tsa.stop();soundIqro1.sound_tsa.release();
+        soundIqro1.sound_ya.stop();soundIqro1.sound_ya.release();
+        soundIqro1.sound_za.stop();soundIqro1.sound_za.release();
     }
-/**
-    public void OnClickMetodeIqro1(View v){
-        if(iqroTitle.getTitle().equals("1")){
-            MediaPlayer mp = MediaPlayer.create(this,R.raw.slide1_1);
-            mp.start();
-        }
-    }
- **/
-/**
-    public void onGridItemClick(GridView g, View v, int position, long id) {
-        //if(GridItems1[position].title=="1"){mp = MediaPlayer.create(this,R.raw.slide1_1);mp.start();}
-        Toast.makeText(
-                activity,
-                "Position Clicked: - " + position + " & " + "Text is: - "
-                        + GridItems1[position].title, Toast.LENGTH_LONG).show();
-        Log.e("TAG", "POSITION CLICKED " + position);
-
-        iqroTitle.setTitle("1");
-    }
- **/
 }
