@@ -14,9 +14,8 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton i;
-
     private int length = 0;
+    Intent i;
     BackSound stat;
     String status="";
 
@@ -29,9 +28,24 @@ public class MainActivity extends AppCompatActivity {
         if(stat.player.getCurrentPosition() == 0){
             stat.player.start();
         }
-
     }
 
+
+    @Override
+    protected  void onPause(){
+        super.onPause();
+        if(i != null){
+
+        }else
+            stat.player.pause();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        stat.player.seekTo(stat.player.getCurrentPosition());
+        stat.player.start();
+    }
 
     @Override
     public void onBackPressed() {
@@ -40,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonHomeClick(View v) {
         if (v.getId() == R.id.informasi) {
-            Intent i = new Intent(MainActivity.this, Informasi.class);
+             i = new Intent(MainActivity.this, Informasi.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         } else if (v.getId() == R.id.pengaturan) {
-            Intent i = new Intent(MainActivity.this, Pengaturan.class);
+             i = new Intent(MainActivity.this, Pengaturan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
@@ -54,21 +68,21 @@ public class MainActivity extends AppCompatActivity {
         } else if (v.getId() == R.id.pelafalan) {
             stat.player.stop();
             stat.player.release();
-            Intent i = new Intent(MainActivity.this, Pelafalan.class);
+             i = new Intent(MainActivity.this, Pelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
         } else if (v.getId() == R.id.menu_latihan) {
             stat.player.stop();
             stat.player.release();
-            Intent i = new Intent(MainActivity.this, latihanPelafalan.class);
+             i = new Intent(MainActivity.this, latihanPelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
         } else if (v.getId() == R.id.metodeIqro) {
             stat.player.stop();
             stat.player.release();
-            Intent i = new Intent(MainActivity.this, MetodeIqro.class);
+             i = new Intent(MainActivity.this, MetodeIqro.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             finish();
