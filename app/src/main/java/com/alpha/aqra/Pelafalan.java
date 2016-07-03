@@ -35,6 +35,7 @@ public class Pelafalan extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        stat.SoundPlayer(this,R.raw.intro);
         Intent i = new Intent(Pelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);

@@ -124,7 +124,7 @@ public class MetodeIqro2 extends FragmentActivity {
     }
     public void OnClickSlideIqro2(View v){
         if(v.getId() == R.id.btnBackHome2) {
-            //stat.SoundPlayer(getApplicationContext(),R.raw.intro);
+            stat.SoundPlayer(getApplicationContext(),R.raw.intro);
             Intent i = new Intent(MetodeIqro2.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);

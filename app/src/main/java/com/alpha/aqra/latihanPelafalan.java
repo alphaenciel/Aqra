@@ -51,7 +51,11 @@ public class latihanPelafalan extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-
+        stat.SoundPlayer(this,R.raw.intro);
+        Intent i = new Intent(latihanPelafalan.this,MainActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
     }
 
     public void onClickLatihanRecord(View v){

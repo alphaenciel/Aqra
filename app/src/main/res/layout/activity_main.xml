@@ -39,8 +39,8 @@
         android:onClick="onButtonHomeClick" />
 
     <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/pengaturan"
         android:background="@drawable/btn_pengaturan"
         android:layout_alignParentBottom="true"
@@ -51,8 +51,8 @@
         android:onClick="onButtonHomeClick" />
 
     <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/informasi"
         android:background="@drawable/btn_informasi"
         android:layout_alignParentBottom="true"
