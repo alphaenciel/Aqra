@@ -18,6 +18,7 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        stat.setCurrVolume(99);
         stat.SoundPlayer(this,R.raw.intro);
         setContentView(R.layout.activity_intro);
 

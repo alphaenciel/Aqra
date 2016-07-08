@@ -7,6 +7,9 @@ import android.media.MediaPlayer;
  * Created by alphaenciel on 6/20/2016.
  */
 public class SoundIqro1 {
+
+    public static int volume;
+
     public static MediaPlayer sound_a,sound_ain,sound_ba,sound_da,sound_dho,sound_dza,sound_fa,sound_gho,sound_ha,sound_ho
     ,sound_jai,sound_ka,sound_kha,sound_la,sound_ma,sound_na,sound_qo,sound_ro,sound_sa,sound_sya
             ,sound_syo,sound_ta,sound_tho,sound_to,sound_tsa,sound_ya,sound_za;

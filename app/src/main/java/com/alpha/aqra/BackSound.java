@@ -10,10 +10,23 @@ import android.media.SoundPool;
  */
 public class BackSound {
     public static MediaPlayer player;
-    public static void SoundPlayer(Context ctx,int raw_id){
+    private final static int maxVolume = 100;
+    public static int currVolume;
+
+    public static int getCurrVolume() {
+        return currVolume;
+    }
+
+    public static void setCurrVolume(int currVolume) {
+        BackSound.currVolume = currVolume;
+    }
+
+    public static void SoundPlayer(Context ctx, int raw_id){
         player = MediaPlayer.create(ctx, raw_id);
         player.setLooping(true); // Set looping
-        player.setVolume(100, 100);
+
+        float log1=(float)(Math.log(maxVolume-currVolume)/Math.log(maxVolume));
+        player.setVolume(1-log1,1-log1);
 
         //player.release();
         //player.start();

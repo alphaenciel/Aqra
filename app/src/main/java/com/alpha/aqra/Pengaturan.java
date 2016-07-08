@@ -2,6 +2,7 @@ package com.alpha.aqra;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +15,19 @@ public class Pengaturan extends AppCompatActivity {
     private AudioManager audioManager;
 
     public  int maxVolume=0;
-    public int curVolume=0;
+    public int curVolume;
 
-    //BackSound backSound;
+    Intent i;
+
+    public int getCurVolume() {
+        return curVolume;
+    }
+
+    public void setCurVolume(int curVolume) {
+        this.curVolume = curVolume;
+    }
+
+    BackSound backSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +38,25 @@ public class Pengaturan extends AppCompatActivity {
         initControls();
     }
 
+    @Override
+    protected  void onPause(){
+        super.onPause();
+        if(i != null){
+
+        }else
+            backSound.player.pause();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        backSound.player.seekTo(backSound.player.getCurrentPosition());
+        backSound.player.start();
+    }
+
     public void onButtonPengaturanClick(View v){
         if(v.getId() == R.id.back_pengaturan) {
-            Intent i = new Intent(Pengaturan.this, MainActivity.class);
+            i = new Intent(Pengaturan.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -42,10 +69,9 @@ public class Pengaturan extends AppCompatActivity {
 
     private void initControls() {
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-        curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        maxVolume = 100;
         mediaVlmSeekBar.setMax(maxVolume);
-        mediaVlmSeekBar.setProgress(curVolume);
+        mediaVlmSeekBar.setProgress(backSound.getCurrVolume());
         mediaVlmSeekBar
                 .setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
@@ -60,46 +86,12 @@ public class Pengaturan extends AppCompatActivity {
                     @Override
                     public void onProgressChanged(SeekBar arg0, int arg1,
                                                   boolean arg2) {
-                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
-                                arg1, 0);
+                        //audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, arg1, 0);
+                        setCurVolume(arg1);
+                        float log1=(float)(Math.log(maxVolume-arg1)/Math.log(maxVolume));
+                        backSound.player.setVolume(1-log1,1-log1);
                     }
                 });
 
-
-
-/*
-        //int originalVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-
-//Return the handle to a system-level service - 'AUDIO'.
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-//Find the seekbar 1
-        mediaVlmSeekBar = (SeekBar) findViewById(R.id.seekBar1);
-//Set the max range(Volume in this case) of seekbar
-//for Media player volume
-        mediaVlmSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-//Set the progress with current Media Volume
-        mediaVlmSeekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-
-
-        try {
-            //Listener to receive changes to the SeekBar1's progress level
-            mediaVlmSeekBar
-                    .setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                        public void onStopTrackingTouch(SeekBar arg0) {
-                        }
-
-                        public void onStartTrackingTouch(SeekBar arg0) {
-                        }
-                        //When progress level of seekbar1 is changed
-                        public void onProgressChanged(SeekBar arg0,
-                                                      int progress, boolean arg2) {
-                            audioManager.setStreamVolume(
-                                    AudioManager.STREAM_MUSIC, progress, 0);
-                        }
-                    });
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
     }
 }
