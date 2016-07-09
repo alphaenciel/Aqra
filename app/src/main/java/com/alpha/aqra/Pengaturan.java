@@ -1,5 +1,6 @@
 package com.alpha.aqra;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -56,6 +57,11 @@ public class Pengaturan extends AppCompatActivity {
 
     public void onButtonPengaturanClick(View v){
         if(v.getId() == R.id.back_pengaturan) {
+            SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("your_int_key", getCurVolume());
+            editor.commit();
+
             i = new Intent(Pengaturan.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -68,10 +74,13 @@ public class Pengaturan extends AppCompatActivity {
     }
 
     private void initControls() {
+        SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+        int myIntValue = sp.getInt("your_int_key", -1);
+
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         maxVolume = 100;
         mediaVlmSeekBar.setMax(maxVolume);
-        mediaVlmSeekBar.setProgress(backSound.getCurrVolume());
+        mediaVlmSeekBar.setProgress(myIntValue);
         mediaVlmSeekBar
                 .setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
