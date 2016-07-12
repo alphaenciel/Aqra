@@ -1,6 +1,7 @@
 package com.alpha.aqra;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,14 +17,33 @@ public class IntroActivity extends AppCompatActivity {
     private static int splashInterval = 4000;
     private ImageView intro;
 
+    int musicIntValue=0;
+
     BackSound stat;
+    SoundIqro1 iqro1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
-        int myIntValue = sp.getInt("your_int_key", -1);
-        stat.setCurrVolume(myIntValue);
+
+        SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+        musicIntValue = spmusic.getInt("music_int_key",-1);
+        if(musicIntValue == -1){
+            SharedPreferences.Editor editor = spmusic.edit();
+            editor.putInt("music_int_key",99);
+            editor.commit();
+        }
+
+        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+        if(iqroIntValue == -1){
+            SharedPreferences.Editor editor = spmusic.edit();
+            editor.putInt("iqro_int_key",99);
+            editor.commit();
+        }
+
+        stat.setCurrVolume(musicIntValue);
+        iqro1.setVolume(iqroIntValue);
         stat.SoundPlayer(this,R.raw.intro);
         setContentView(R.layout.activity_intro);
 

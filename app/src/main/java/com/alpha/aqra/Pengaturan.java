@@ -13,19 +13,31 @@ import android.widget.SeekBar;
 public class Pengaturan extends AppCompatActivity {
 
     private SeekBar mediaVlmSeekBar;
-    private AudioManager audioManager;
+    private SeekBar iqroVlmSeekBar;
 
     public  int maxVolume=0;
-    public int curVolume;
+    public int curMusicVolume;
+    public int curIqroVolume;
 
     Intent i;
+    SoundIqro1 iqro1;
+    SoundIqro2 iqro2;
 
-    public int getCurVolume() {
-        return curVolume;
+    public int getCurMusicVolume() {
+        return curMusicVolume;
     }
 
-    public void setCurVolume(int curVolume) {
-        this.curVolume = curVolume;
+    public void setCurMusicVolume(int curVolume) {
+
+        this.curMusicVolume = curVolume;
+    }
+
+    public int getCurIqroVolume() {
+        return curIqroVolume;
+    }
+
+    public void setCurIqroVolume(int curIqroVolume) {
+        this.curIqroVolume = curIqroVolume;
     }
 
     BackSound backSound;
@@ -36,6 +48,7 @@ public class Pengaturan extends AppCompatActivity {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         setContentView(R.layout.activity_pengaturan);
         mediaVlmSeekBar = (SeekBar)findViewById(R.id.seekBar1);
+        iqroVlmSeekBar = (SeekBar)findViewById(R.id.seekBar2);
         initControls();
     }
 
@@ -57,10 +70,19 @@ public class Pengaturan extends AppCompatActivity {
 
     public void onButtonPengaturanClick(View v){
         if(v.getId() == R.id.back_pengaturan) {
-            SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+            setCurMusicVolume(mediaVlmSeekBar.getProgress());
+            SharedPreferences sp = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
-            editor.putInt("your_int_key", getCurVolume());
+            editor.putInt("music_int_key", getCurMusicVolume());
             editor.commit();
+
+            setCurIqroVolume(iqroVlmSeekBar.getProgress());
+            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor1 = spiqro.edit();
+            editor1.putInt("iqro_int_key", getCurIqroVolume());
+            editor1.commit();
+            iqro1.setVolume(getCurIqroVolume());
+            iqro2.setVolume(getCurIqroVolume());
 
             i = new Intent(Pengaturan.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -74,13 +96,19 @@ public class Pengaturan extends AppCompatActivity {
     }
 
     private void initControls() {
-        SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
-        int myIntValue = sp.getInt("your_int_key", -1);
+        SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+        int musicIntValue = spmusic.getInt("music_int_key", -1);
 
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+
         maxVolume = 100;
+
         mediaVlmSeekBar.setMax(maxVolume);
-        mediaVlmSeekBar.setProgress(myIntValue);
+        iqroVlmSeekBar.setMax(maxVolume);
+
+        mediaVlmSeekBar.setProgress(musicIntValue);
+        iqroVlmSeekBar.setProgress(iqroIntValue);
         mediaVlmSeekBar
                 .setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
@@ -96,11 +124,9 @@ public class Pengaturan extends AppCompatActivity {
                     public void onProgressChanged(SeekBar arg0, int arg1,
                                                   boolean arg2) {
                         //audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, arg1, 0);
-                        setCurVolume(arg1);
                         float log1=(float)(Math.log(maxVolume-arg1)/Math.log(maxVolume));
                         backSound.player.setVolume(1-log1,1-log1);
                     }
                 });
-
     }
 }
