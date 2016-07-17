@@ -146,10 +146,12 @@ public class GridFragment2 extends Fragment {
         else if (GridItems2[position].title=="82"){soundIqro2.sound_sayala.start();}
         else if (GridItems2[position].title=="83"){soundIqro2.sound_fataya.start();}
         else if (GridItems2[position].title=="84"){soundIqro2.sound_yayaya.start();}
+        /*
         Toast.makeText(
                 activity,
                 "Position Clicked: - " + position + " & " + "Text is: - "
                         + GridItems2[position].title, Toast.LENGTH_LONG).show();
         Log.e("TAG", "POSITION CLICKED " + position);
+        */
     }
 }

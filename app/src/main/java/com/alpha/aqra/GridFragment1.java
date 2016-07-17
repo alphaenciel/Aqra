@@ -162,13 +162,13 @@ public class GridFragment1 extends Fragment {
         else if (GridItems1[position].title=="88"){soundIqro1.sound_da.start();}
         else if (GridItems1[position].title=="89"){soundIqro1.sound_za.start();}
         else if (GridItems1[position].title=="90"){soundIqro1.sound_kha.start();}
-
+        /*
         Toast.makeText(
                 activity,
                 "Position Clicked: - " + position + " & " + "Text is: - "
                         + GridItems1[position].title, Toast.LENGTH_LONG).show();
         Log.e("TAG", "POSITION CLICKED " + position);
-
+        */
         //iqroTitle.setTitle("1");
     }
 

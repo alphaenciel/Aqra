@@ -21,7 +21,7 @@ public class SoundIqro1 {
 
     public static MediaPlayer sound_a,sound_ain,sound_ba,sound_da,sound_dho,sound_dza,sound_fa,sound_gho,sound_ha,sound_ho
     ,sound_jai,sound_ka,sound_kha,sound_la,sound_ma,sound_na,sound_qo,sound_ro,sound_sa,sound_sya
-            ,sound_syo,sound_ta,sound_tho,sound_to,sound_tsa,sound_ya,sound_za;
+            ,sound_syo,sound_ta,sound_tho,sound_to,sound_tsa,sound_ya,sound_za, sound_wa;
     public static void SoundPlayer1(Context ctx,int raw_id){sound_a = MediaPlayer.create(ctx, raw_id);sound_a.setVolume(getVolume(), getVolume());}
     public static void SoundPlayer2(Context ctx,int raw_id){sound_ain = MediaPlayer.create(ctx, raw_id);sound_ain.setVolume(getVolume(), getVolume());}
     public static void SoundPlayer3(Context ctx,int raw_id){sound_ba = MediaPlayer.create(ctx, raw_id);sound_ba.setVolume(getVolume(), getVolume());}
@@ -49,5 +49,6 @@ public class SoundIqro1 {
     public static void SoundPlayer25(Context ctx,int raw_id){sound_tsa = MediaPlayer.create(ctx, raw_id);sound_tsa.setVolume(getVolume(), getVolume());}
     public static void SoundPlayer26(Context ctx,int raw_id){sound_ya = MediaPlayer.create(ctx, raw_id);sound_ya.setVolume(getVolume(), getVolume());}
     public static void SoundPlayer27(Context ctx,int raw_id){sound_za = MediaPlayer.create(ctx, raw_id);sound_za.setVolume(getVolume(), getVolume());}
+    public static void SoundPlayer28(Context ctx,int raw_id){sound_wa = MediaPlayer.create(ctx, raw_id);sound_wa.setVolume(getVolume(), getVolume());}
 
 }
