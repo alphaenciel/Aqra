@@ -42,13 +42,14 @@
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_sound"
         android:background="@drawable/btn_sound"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="140dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:onClick="OnClickSlideIqro1" />
 
     <ImageView
         android:layout_width="100dp"

@@ -17,7 +17,7 @@ public class IntroActivity extends AppCompatActivity {
     private static int splashInterval = 4000;
     private ImageView intro;
 
-    int musicIntValue=0;
+    int musicIntValue=0, iqroIntValue=0;
 
     BackSound stat;
     SoundIqro1 iqro1;
@@ -35,9 +35,9 @@ public class IntroActivity extends AppCompatActivity {
         }
 
         SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-        int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+        iqroIntValue = spiqro.getInt("iqro_int_key", -1);
         if(iqroIntValue == -1){
-            SharedPreferences.Editor editor = spmusic.edit();
+            SharedPreferences.Editor editor = spiqro.edit();
             editor.putInt("iqro_int_key",99);
             editor.commit();
         }

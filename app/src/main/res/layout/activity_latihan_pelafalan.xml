@@ -317,17 +317,8 @@
         android:background="@drawable/btn_home"
         android:onClick="OnButtonPelafalanBack"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/latihan_ma"
-        android:layout_toEndOf="@+id/latihan_ma" />
-
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/latihan_btnSound"
-        android:background="@drawable/btn_sound"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/latihan_wa"
-        android:layout_toEndOf="@+id/latihan_wa" />
+        android:layout_toRightOf="@+id/latihan_to"
+        android:layout_toEndOf="@+id/latihan_to" />
 
     <ImageButton
         android:layout_width="80dp"

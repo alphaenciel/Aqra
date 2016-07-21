@@ -1,6 +1,8 @@
 package com.alpha.aqra;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +16,7 @@ public class Pelafalan extends AppCompatActivity {
     ImageView selectedImg;
     ImageView hijayahBesar;
     ImageButton btn_auto;
+    ImageButton btn_sound;
     BackSound stat;
     SoundIqro1 sp;
 
@@ -30,26 +33,146 @@ public class Pelafalan extends AppCompatActivity {
         hijayahBesar = (ImageView) findViewById(R.id.pelafalan_hijayah);
         selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_a);
         btn_auto=(ImageButton)findViewById(R.id.pelafalan_btn_automatic);
+        btn_sound=(ImageButton)findViewById(R.id.pelafalan_btn_sound);
         selectedImg.setBackgroundResource(R.drawable.hijayah_orange_a);
         sp.sound_a.start();
     }
 
     @Override
     public void onBackPressed() {
+
+        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor1 = spiqro.edit();
+        editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+        editor1.commit();
         stat.SoundPlayer(this,R.raw.intro);
         Intent i = new Intent(Pelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
         //stat.setStatus("");
+        sp.sound_a.stop();sp.sound_a.release();
+        sp.sound_ain.stop();sp.sound_ain.release();
+        sp.sound_ba.stop();sp.sound_ba.release();
+        sp.sound_da.stop();sp.sound_da.release();
+        sp.sound_dho.stop();sp.sound_dho.release();
+        sp.sound_dza.stop();sp.sound_dza.release();
+        sp.sound_fa.stop();sp.sound_fa.release();
+        sp.sound_gho.stop();sp.sound_gho.release();
+        sp.sound_ha.stop();sp.sound_ha.release();
+        sp.sound_ho.stop();sp.sound_ho.release();
+        sp.sound_jai.stop();sp.sound_jai.release();
+        sp.sound_ka.stop();sp.sound_ka.release();
+        sp.sound_kha.stop();sp.sound_kha.release();
+        sp.sound_la.stop();sp.sound_la.release();
+        sp.sound_ma.stop();sp.sound_ma.release();
+        sp.sound_na.stop();sp.sound_na.release();
+        sp.sound_qo.stop();sp.sound_qo.release();
+        sp.sound_ro.stop();sp.sound_ro.release();
+        sp.sound_sa.stop();sp.sound_sa.release();
+        sp.sound_sya.stop();sp.sound_sya.release();
+        sp.sound_syo.stop();sp.sound_syo.release();
+        sp.sound_ta.stop();sp.sound_ta.release();
+        sp.sound_tho.stop();sp.sound_tho.release();
+        sp.sound_to.stop();sp.sound_to.release();
+        sp.sound_tsa.stop();sp.sound_tsa.release();
+        sp.sound_ya.stop();sp.sound_ya.release();
+        sp.sound_za.stop();sp.sound_za.release();
+        sp.sound_wa.stop();sp.sound_wa.release();
     }
     public void OnButtonPelafalanBack(View v){
-        stat.SoundPlayer(this,R.raw.intro);
-        Intent i = new Intent(Pelafalan.this,MainActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
-        finish();
-        //stat.setStatus("");
+        if(v.getId() == R.id.pelafalan_btn_home){
+            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor1 = spiqro.edit();
+            editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+            editor1.commit();
+            stat.SoundPlayer(this,R.raw.intro);
+            Intent i = new Intent(Pelafalan.this,MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+            finish();
+            //stat.setStatus("");
+            sp.sound_a.stop();sp.sound_a.release();
+            sp.sound_ain.stop();sp.sound_ain.release();
+            sp.sound_ba.stop();sp.sound_ba.release();
+            sp.sound_da.stop();sp.sound_da.release();
+            sp.sound_dho.stop();sp.sound_dho.release();
+            sp.sound_dza.stop();sp.sound_dza.release();
+            sp.sound_fa.stop();sp.sound_fa.release();
+            sp.sound_gho.stop();sp.sound_gho.release();
+            sp.sound_ha.stop();sp.sound_ha.release();
+            sp.sound_ho.stop();sp.sound_ho.release();
+            sp.sound_jai.stop();sp.sound_jai.release();
+            sp.sound_ka.stop();sp.sound_ka.release();
+            sp.sound_kha.stop();sp.sound_kha.release();
+            sp.sound_la.stop();sp.sound_la.release();
+            sp.sound_ma.stop();sp.sound_ma.release();
+            sp.sound_na.stop();sp.sound_na.release();
+            sp.sound_qo.stop();sp.sound_qo.release();
+            sp.sound_ro.stop();sp.sound_ro.release();
+            sp.sound_sa.stop();sp.sound_sa.release();
+            sp.sound_sya.stop();sp.sound_sya.release();
+            sp.sound_syo.stop();sp.sound_syo.release();
+            sp.sound_ta.stop();sp.sound_ta.release();
+            sp.sound_tho.stop();sp.sound_tho.release();
+            sp.sound_to.stop();sp.sound_to.release();
+            sp.sound_tsa.stop();sp.sound_tsa.release();
+            sp.sound_ya.stop();sp.sound_ya.release();
+            sp.sound_za.stop();sp.sound_za.release();
+            sp.sound_wa.stop();sp.sound_wa.release();
+        }else if(v.getId() == R.id.pelafalan_btn_sound){
+            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+            int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+            if(iqroIntValue > 1 ){
+                btn_sound.setBackgroundResource(R.drawable.btn_mute);
+                SharedPreferences.Editor editor = sptemp.edit();
+                editor.putInt("music_temp_int_key", iqroIntValue);
+                editor.commit();
+                SharedPreferences.Editor editor1 = spiqro.edit();
+                editor1.putInt("iqro_int_key",1);
+                editor1.commit();
+            }
+            else if(iqroIntValue <= 1 ){
+                SharedPreferences.Editor editor1 = spiqro.edit();
+                editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+                editor1.commit();
+                btn_sound.setBackgroundResource(R.drawable.btn_sound);
+            }
+            iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+            float log1= (float) (1-(Math.log(100-iqroIntValue)/Math.log(100)));
+            sp.sound_a.setVolume(log1,log1);
+            sp.sound_ain.setVolume(log1,log1);
+            sp.sound_ba.setVolume(log1,log1);
+            sp.sound_da.setVolume(log1,log1);
+            sp.sound_dho.setVolume(log1,log1);
+            sp.sound_dza.setVolume(log1,log1);
+            sp.sound_fa.setVolume(log1,log1);
+            sp.sound_gho.setVolume(log1,log1);
+            sp.sound_ha.setVolume(log1,log1);
+            sp.sound_ho.setVolume(log1,log1);
+            sp.sound_jai.setVolume(log1,log1);
+            sp.sound_ka.setVolume(log1,log1);
+            sp.sound_kha.setVolume(log1,log1);
+            sp.sound_la.setVolume(log1,log1);
+            sp.sound_ma.setVolume(log1,log1);
+            sp.sound_na.setVolume(log1,log1);
+            sp.sound_qo.setVolume(log1,log1);
+            sp.sound_ro.setVolume(log1,log1);
+            sp.sound_sa.setVolume(log1,log1);
+            sp.sound_sya.setVolume(log1,log1);
+            sp.sound_syo.setVolume(log1,log1);
+            sp.sound_ta.setVolume(log1,log1);
+            sp.sound_tho.setVolume(log1,log1);
+            sp.sound_to.setVolume(log1,log1);
+            sp.sound_tsa.setVolume(log1,log1);
+            sp.sound_ya.setVolume(log1,log1);
+            sp.sound_za.setVolume(log1,log1);
+            sp.sound_wa.setVolume(log1,log1);
+        }
+
     }
 
     public void onCLickAutoPelafalan(View v){

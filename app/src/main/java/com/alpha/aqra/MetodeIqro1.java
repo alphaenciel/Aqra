@@ -2,6 +2,7 @@ package com.alpha.aqra;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class MetodeIqro1 extends FragmentActivity {
     private PagerAdapter pm;
     BackSound stat;
     SoundIqro1 soundIqro1;
+    ImageButton btn_sound;
 
     ArrayList<Category1> codeCategory;
 
@@ -47,6 +50,7 @@ public class MetodeIqro1 extends FragmentActivity {
         setContentView(R.layout.activity_metode_iqro1);
         awesomePager = (ViewPager) findViewById(R.id.pager);
         mIndicator = (PageIndicator) findViewById(R.id.pagerIndicator);
+        btn_sound=(ImageButton)findViewById(R.id.btn_sound);
 
         ArrayList<String> a = new ArrayList<String>();
 
@@ -136,6 +140,11 @@ public class MetodeIqro1 extends FragmentActivity {
 
     public void OnClickSlideIqro1(View v){
         if(v.getId() == R.id.btnBackHome) {
+            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor1 = spiqro.edit();
+            editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+            editor1.commit();
             stat.SoundPlayer(getApplicationContext(),R.raw.intro);
             Intent i = new Intent(MetodeIqro1.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -168,10 +177,62 @@ public class MetodeIqro1 extends FragmentActivity {
             soundIqro1.sound_tsa.stop();soundIqro1.sound_tsa.release();
             soundIqro1.sound_ya.stop();soundIqro1.sound_ya.release();
             soundIqro1.sound_za.stop();soundIqro1.sound_za.release();
+        }else if(v.getId() == R.id.btn_sound) {
+            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+            int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+            if (iqroIntValue > 1) {
+                btn_sound.setBackgroundResource(R.drawable.btn_mute);
+                SharedPreferences.Editor editor = sptemp.edit();
+                editor.putInt("music_temp_int_key", iqroIntValue);
+                editor.commit();
+                SharedPreferences.Editor editor1 = spiqro.edit();
+                editor1.putInt("iqro_int_key", 1);
+                editor1.commit();
+            } else if (iqroIntValue <= 1) {
+                SharedPreferences.Editor editor1 = spiqro.edit();
+                editor1.putInt("iqro_int_key", sptemp.getInt("music_temp_int_key", -1));
+                editor1.commit();
+                btn_sound.setBackgroundResource(R.drawable.btn_sound);
+            }
+            iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+            float log1 = (float) (1 - (Math.log(100 - iqroIntValue) / Math.log(100)));
+            soundIqro1.sound_a.setVolume(log1,log1);
+            soundIqro1.sound_ain.setVolume(log1,log1);
+            soundIqro1.sound_ba.setVolume(log1,log1);
+            soundIqro1.sound_da.setVolume(log1,log1);
+            soundIqro1.sound_dho.setVolume(log1,log1);
+            soundIqro1.sound_dza.setVolume(log1,log1);
+            soundIqro1.sound_fa.setVolume(log1,log1);
+            soundIqro1.sound_gho.setVolume(log1,log1);
+            soundIqro1.sound_ha.setVolume(log1,log1);
+            soundIqro1.sound_ho.setVolume(log1,log1);
+            soundIqro1.sound_jai.setVolume(log1,log1);
+            soundIqro1.sound_ka.setVolume(log1,log1);
+            soundIqro1.sound_kha.setVolume(log1,log1);
+            soundIqro1.sound_la.setVolume(log1,log1);
+            soundIqro1.sound_ma.setVolume(log1,log1);
+            soundIqro1.sound_na.setVolume(log1,log1);
+            soundIqro1.sound_qo.setVolume(log1,log1);
+            soundIqro1.sound_ro.setVolume(log1,log1);
+            soundIqro1.sound_sa.setVolume(log1,log1);
+            soundIqro1.sound_sya.setVolume(log1,log1);
+            soundIqro1.sound_syo.setVolume(log1,log1);
+            soundIqro1.sound_ta.setVolume(log1,log1);
+            soundIqro1.sound_tho.setVolume(log1,log1);
+            soundIqro1.sound_to.setVolume(log1,log1);
+            soundIqro1.sound_tsa.setVolume(log1,log1);
+            soundIqro1.sound_ya.setVolume(log1,log1);
+            soundIqro1.sound_za.setVolume(log1,log1);
         }
     }
     @Override
     public void onBackPressed() {
+        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor1 = spiqro.edit();
+        editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+        editor1.commit();
         Intent i = new Intent(MetodeIqro1.this,MetodeIqro.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);

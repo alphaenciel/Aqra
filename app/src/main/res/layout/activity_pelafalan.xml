@@ -61,7 +61,8 @@
         android:layout_marginEnd="34dp"
         android:layout_alignTop="@+id/pelafalan_btn_home"
         android:layout_toLeftOf="@+id/pelafalan_btn_home"
-        android:layout_toStartOf="@+id/pelafalan_btn_home" />
+        android:layout_toStartOf="@+id/pelafalan_btn_home"
+        android:onClick="OnButtonPelafalanBack" />
 
     <ImageButton
         android:layout_width="35dp"
