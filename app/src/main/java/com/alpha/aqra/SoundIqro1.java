@@ -51,4 +51,36 @@ public class SoundIqro1 {
     public static void SoundPlayer27(Context ctx,int raw_id){sound_za = MediaPlayer.create(ctx, raw_id);sound_za.setVolume(getVolume(), getVolume());}
     public static void SoundPlayer28(Context ctx,int raw_id){sound_wa = MediaPlayer.create(ctx, raw_id);sound_wa.setVolume(getVolume(), getVolume());}
 
+
+    public void setVolumeMute(float volume){
+        sound_a.setVolume(volume,volume);
+        sound_ain.setVolume(volume,volume);
+        sound_ba.setVolume(volume,volume);
+        sound_da.setVolume(volume,volume);
+        sound_dho.setVolume(volume,volume);
+        sound_dza.setVolume(volume,volume);
+        sound_fa.setVolume(volume,volume);
+        sound_gho.setVolume(volume,volume);
+        sound_ha.setVolume(volume,volume);
+        sound_ho.setVolume(volume,volume);
+        sound_jai.setVolume(volume,volume);
+        sound_ka.setVolume(volume,volume);
+        sound_kha.setVolume(volume,volume);
+        sound_la.setVolume(volume,volume);
+        sound_ma.setVolume(volume,volume);
+        sound_na.setVolume(volume,volume);
+        sound_qo.setVolume(volume,volume);
+        sound_ro.setVolume(volume,volume);
+        sound_sa.setVolume(volume,volume);
+        sound_sya.setVolume(volume,volume);
+        sound_syo.setVolume(volume,volume);
+        sound_ta.setVolume(volume,volume);
+        sound_tho.setVolume(volume,volume);
+        sound_to.setVolume(volume,volume);
+        sound_tsa.setVolume(volume,volume);
+        sound_ya.setVolume(volume,volume);
+        sound_za.setVolume(volume,volume);
+        sound_wa.setVolume(volume,volume);
+
+    }
 }

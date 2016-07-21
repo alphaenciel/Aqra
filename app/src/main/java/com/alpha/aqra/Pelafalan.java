@@ -143,7 +143,9 @@ public class Pelafalan extends AppCompatActivity {
             }
             iqroIntValue = spiqro.getInt("iqro_int_key", -1);
             float log1= (float) (1-(Math.log(100-iqroIntValue)/Math.log(100)));
-            sp.sound_a.setVolume(log1,log1);
+            sp = new SoundIqro1();
+            sp.setVolumeMute(log1);
+            /*sp.sound_a.setVolume(log1,log1);
             sp.sound_ain.setVolume(log1,log1);
             sp.sound_ba.setVolume(log1,log1);
             sp.sound_da.setVolume(log1,log1);
@@ -170,7 +172,7 @@ public class Pelafalan extends AppCompatActivity {
             sp.sound_tsa.setVolume(log1,log1);
             sp.sound_ya.setVolume(log1,log1);
             sp.sound_za.setVolume(log1,log1);
-            sp.sound_wa.setVolume(log1,log1);
+            sp.sound_wa.setVolume(log1,log1);*/
         }
 
     }

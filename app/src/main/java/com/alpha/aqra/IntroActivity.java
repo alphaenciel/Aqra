@@ -21,6 +21,7 @@ public class IntroActivity extends AppCompatActivity {
 
     BackSound stat;
     SoundIqro1 iqro1;
+    SoundIqro2 iqro2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class IntroActivity extends AppCompatActivity {
 
         stat.setCurrVolume(musicIntValue);
         iqro1.setVolume(iqroIntValue);
+        iqro2.setVolume(iqroIntValue);
         stat.SoundPlayer(this,R.raw.intro);
         setContentView(R.layout.activity_intro);
 
