@@ -2,8 +2,11 @@ package com.alpha.aqra;
 
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +22,6 @@ import java.util.Random;
 
 public class latihanPelafalan extends AppCompatActivity {
 
-    private int rekamOn;
     ProgressBar progress;
     ImageView selectedImg,status;
     ImageButton rekam, selected;
@@ -31,7 +33,6 @@ public class latihanPelafalan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_latihan_pelafalan);
-        rekamOn = 0;
         rekam=(ImageButton)findViewById(R.id.latihan_btnRekam);
         selectedImg=(ImageView)findViewById(R.id.hasil_rekam);
         selected=(ImageButton) findViewById(R.id.latihan_tempSelected);
@@ -59,12 +60,11 @@ public class latihanPelafalan extends AppCompatActivity {
     }
 
     public void onClickLatihanRecord(View v){
-        if (rekamOn == 0){
-            rekamOn = 1;
+        if(checkNetwork()){
             rekam.setBackgroundResource(R.drawable.btn_rekam_on);
             promptSpeechInput();
         }else{
-            rekamOn = 0;
+            Toast.makeText(latihanPelafalan.this, "Koneksi internet tidak tersedia", Toast.LENGTH_LONG).show();
             rekam.setBackgroundResource(R.drawable.btn_rekam_off);
         }
     }
@@ -83,8 +83,20 @@ public class latihanPelafalan extends AppCompatActivity {
         }
     }
 
+    public boolean checkNetwork(){
+        boolean connected;
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            connected = true;
+        }
+        else
+            connected = false;
+        return connected;
+    }
+
     public void onActivityResult(int resultCode, int requestCode, Intent intent) {
-        if(requestCode == 100 && requestCode == RESULT_OK);
+        if(resultCode == 100 && requestCode == RESULT_OK)
         {
             ArrayList<String> results = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             tmpStr = results.get(0);
@@ -208,6 +220,9 @@ public class latihanPelafalan extends AppCompatActivity {
                 progress.setProgress(n);
                 status.setBackgroundResource(R.drawable.ket_voice_tidak_berhasil);
             }
+            rekam.setBackgroundResource(R.drawable.btn_rekam_off);
+        }else {
+            rekam.setBackgroundResource(R.drawable.btn_rekam_off);
         }
         super.onActivityResult(resultCode, requestCode, intent);
     }
