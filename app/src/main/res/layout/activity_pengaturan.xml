@@ -40,25 +40,15 @@
         android:layout_marginLeft="15dp" />
 
     <ImageButton
-        android:layout_width="225dp"
-        android:layout_height="40dp"
-        android:id="@+id/btn_menu_utama"
-        android:background="@drawable/btn_menu_utama"
-        android:layout_below="@+id/imageButton2"
-        android:layout_toRightOf="@+id/imageButton2"
-        android:layout_toEndOf="@+id/imageButton2"
-        android:layout_marginTop="5dp" />
-
-    <ImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:id="@+id/btn_twitter"
         android:background="@drawable/btn_twitter"
-        android:layout_below="@+id/btn_menu_utama"
-        android:layout_alignLeft="@+id/btn_menu_utama"
-        android:layout_alignStart="@+id/btn_menu_utama"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/imageButton2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="50dp" />
 
     <ImageButton
         android:layout_width="48dp"
@@ -125,20 +115,20 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar1"
-        android:progressDrawable="@drawable/seekbar_progressbar"
+        android:progressDrawable="@drawable/progress"
         android:layout_alignTop="@+id/imageButton"
-        android:layout_alignRight="@+id/btn_menu_utama"
-        android:layout_alignEnd="@+id/btn_menu_utama"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:thumb="@drawable/thumb"
+        android:layout_marginLeft="50dp" />
 
     <SeekBar
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar2"
-        android:progressDrawable="@drawable/seekbar_progressbar"
+        android:progressDrawable="@drawable/progress"
         android:visibility="visible"
-        android:layout_alignRight="@+id/btn_menu_utama"
-        android:layout_alignEnd="@+id/btn_menu_utama"
-        android:layout_alignBottom="@+id/imageButton2" />
+        android:layout_alignBottom="@+id/imageButton2"
+        android:thumb="@drawable/thumb"
+        android:layout_marginLeft="50dp" />
 
 </RelativeLayout>

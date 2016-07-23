@@ -10,6 +10,15 @@
     tools:context="com.alpha.aqra.latihanPelafalan"
     android:background="@drawable/bg_latihan_pelafalan2">
 
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/latihan_btnHome"
+        android:background="@drawable/btn_home"
+        android:onClick="OnButtonPelafalanBack"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -309,16 +318,6 @@
         android:layout_below="@+id/latihan_ain"
         android:layout_toLeftOf="@+id/latihan_haq"
         android:layout_toStartOf="@+id/latihan_haq" />
-
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/latihan_btnHome"
-        android:background="@drawable/btn_home"
-        android:onClick="OnButtonPelafalanBack"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/latihan_to"
-        android:layout_toEndOf="@+id/latihan_to" />
 
     <ImageButton
         android:layout_width="80dp"

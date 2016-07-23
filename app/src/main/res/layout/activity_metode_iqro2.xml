@@ -53,9 +53,10 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/labelIqro2"
+        android:id="@+id/tIqro2"
         android:background="@drawable/btn_iqro_2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="100dp"
+        android:onClick="OnClickSlideIqro2"/>
 </RelativeLayout>
