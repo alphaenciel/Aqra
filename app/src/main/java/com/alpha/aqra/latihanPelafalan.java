@@ -22,6 +22,7 @@ import java.util.Random;
 
 public class latihanPelafalan extends AppCompatActivity {
 
+    private int btn_id=0;
     ProgressBar progress;
     ImageView selectedImg,status;
     ImageButton rekam, selected;
@@ -101,7 +102,27 @@ public class latihanPelafalan extends AppCompatActivity {
             ArrayList<String> results = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             tmpStr = results.get(0);
 
-            if (tmpStr.equalsIgnoreCase("Alif")){
+            if(btn_id == R.id.latihan_alif && tmpStr.equalsIgnoreCase("Alif")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.a_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_alif);
+                selected.setBackgroundResource(R.drawable.a_02);
+            }else if(btn_id == R.id.latihan_ba && tmpStr.equalsIgnoreCase("Mbak")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ba_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ba);
+                selected.setBackgroundResource(R.drawable.ba_02);
+            }else if (btn_id == R.id.latihan_ta &&tmpStr.equalsIgnoreCase("Tak")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ta_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ta);
+                selected.setBackgroundResource(R.drawable.ta_02);
+            }else
+                voiceFailed();
+            /*if (tmpStr.equalsIgnoreCase("Alif")){
                 voiceSuccess();
                 selectedImg.setBackgroundResource(R.drawable.a_03);
                 selectedBeforeHijayah();
@@ -219,7 +240,7 @@ public class latihanPelafalan extends AppCompatActivity {
                 int n = new Random().nextInt(30);
                 progress.setProgress(n);
                 status.setBackgroundResource(R.drawable.ket_voice_tidak_berhasil);
-            }
+            }*/
             rekam.setBackgroundResource(R.drawable.btn_rekam_off);
         }else {
             rekam.setBackgroundResource(R.drawable.btn_rekam_off);
@@ -233,6 +254,13 @@ public class latihanPelafalan extends AppCompatActivity {
         int n = new Random().nextInt(high-low)+low;
         progress.setProgress(n);
         status.setBackgroundResource(R.drawable.ket_voice_berhasil);
+    }
+    public void voiceFailed(){
+        int low = 1;
+        int high = 45;
+        int n = new Random().nextInt(high-low)+low;
+        progress.setProgress(n);
+        status.setBackgroundResource(R.drawable.ket_voice_tidak_berhasil);
     }
 
     public void selectedBeforeHijayah(){
@@ -278,5 +306,10 @@ public class latihanPelafalan extends AppCompatActivity {
         }else {
 
         }
+    }
+
+    public void OnButtonPelafalanClick(View v){
+        btn_id = v.getId();
+        promptSpeechInput();
     }
 }
