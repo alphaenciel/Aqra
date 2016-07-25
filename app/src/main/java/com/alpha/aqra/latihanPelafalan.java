@@ -170,12 +170,6 @@ public class latihanPelafalan extends AppCompatActivity {
                 selectedBeforeHijayah();
                 selected = (ImageButton)findViewById(R.id.latihan_za);
                 selected.setBackgroundResource(R.drawable.za_02);
-            }else if (btn_id == R.id.latihan_za && tmpStr.equalsIgnoreCase("jay")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.za_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_za);
-                selected.setBackgroundResource(R.drawable.za_02);
             }else if (btn_id == R.id.latihan_sa && tmpStr.equalsIgnoreCase("sin")){
                 voiceSuccess();
                 selectedImg.setBackgroundResource(R.drawable.sa_03);
@@ -266,12 +260,12 @@ public class latihanPelafalan extends AppCompatActivity {
                 selectedBeforeHijayah();
                 selected = (ImageButton)findViewById(R.id.latihan_wa);
                 selected.setBackgroundResource(R.drawable.wa_02);
-            }else if (btn_id == R.id.latihan_ha && (tmpStr.equalsIgnoreCase("h") || tmpStr.equalsIgnoreCase("ha"))){
+            }else if (btn_id == R.id.latihan_haq && (tmpStr.equalsIgnoreCase("h") || tmpStr.equalsIgnoreCase("ha"))){
                 voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.ha_03);
+                selectedImg.setBackgroundResource(R.drawable.haq_03);
                 selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_ha);
-                selected.setBackgroundResource(R.drawable.ha_02);
+                selected = (ImageButton)findViewById(R.id.latihan_haq);
+                selected.setBackgroundResource(R.drawable.haq_02);
             }else if (btn_id == R.id.latihan_ya && tmpStr.equalsIgnoreCase("ya")){
                 voiceSuccess();
                 selectedImg.setBackgroundResource(R.drawable.ya_03);
