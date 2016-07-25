@@ -237,7 +237,8 @@
         android:onClick="OnButtonPelafalanClick"
         android:layout_alignTop="@+id/latihan_qo"
         android:layout_toRightOf="@+id/latihan_ba"
-        android:layout_toEndOf="@+id/latihan_ba" />
+        android:layout_toEndOf="@+id/latihan_ba"
+        android:layout_marginLeft="5dp" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -247,7 +248,8 @@
         android:onClick="OnButtonPelafalanClick"
         android:layout_alignTop="@+id/latihan_ka"
         android:layout_toLeftOf="@+id/latihan_fa"
-        android:layout_toStartOf="@+id/latihan_fa" />
+        android:layout_toStartOf="@+id/latihan_fa"
+        android:layout_marginLeft="5dp" />
 
     <ImageButton
         android:layout_width="35dp"
