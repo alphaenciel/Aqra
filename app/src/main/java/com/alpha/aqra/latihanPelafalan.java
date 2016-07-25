@@ -39,6 +39,7 @@ public class latihanPelafalan extends AppCompatActivity {
         selected=(ImageButton) findViewById(R.id.latihan_tempSelected);
         progress = (ProgressBar)findViewById(R.id.progressBar);
         status = (ImageView)findViewById((R.id.latihan_status));
+        txtTemp=(TextView)findViewById(R.id.textView2);
         progress.setProgress(0);
         progress.setMax(100);
     }
@@ -75,7 +76,7 @@ public class latihanPelafalan extends AppCompatActivity {
         voicerecogize.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass().getPackage().getName());
         voicerecogize.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        voicerecogize.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "in_ID");
+        voicerecogize.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"in_ID");
         voicerecogize.putExtra("android.speech.extra.EXTRA_ADDITIONAL_LANGUAGES", new String[]{});
         try{
             startActivityForResult(voicerecogize, 100);
@@ -101,6 +102,7 @@ public class latihanPelafalan extends AppCompatActivity {
         {
             ArrayList<String> results = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             tmpStr = results.get(0);
+            txtTemp.setText(tmpStr);
 
             if(btn_id == R.id.latihan_alif && tmpStr.equalsIgnoreCase("Alif")){
                 voiceSuccess();
@@ -120,6 +122,162 @@ public class latihanPelafalan extends AppCompatActivity {
                 selectedBeforeHijayah();
                 selected = (ImageButton)findViewById(R.id.latihan_ta);
                 selected.setBackgroundResource(R.drawable.ta_02);
+            }else if (btn_id == R.id.latihan_tsa &&tmpStr.equalsIgnoreCase("Sa")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.tsa_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_tsa);
+                selected.setBackgroundResource(R.drawable.tsa_02);
+            }else if (btn_id == R.id.latihan_ja &&tmpStr.equalsIgnoreCase("Game")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ja_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ja);
+                selected.setBackgroundResource(R.drawable.ja_02);
+            }else if (btn_id == R.id.latihan_ha && (tmpStr.equalsIgnoreCase("hack") || tmpStr.equalsIgnoreCase("h"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ha_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ha);
+                selected.setBackgroundResource(R.drawable.ha_02);
+            }else if (btn_id == R.id.latihan_ha && (tmpStr.equalsIgnoreCase("coc") || tmpStr.equalsIgnoreCase("ho"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.kho_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_kho);
+                selected.setBackgroundResource(R.drawable.kho_02);
+            }else if (btn_id == R.id.latihan_da && tmpStr.equalsIgnoreCase("dal")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.da_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_da);
+                selected.setBackgroundResource(R.drawable.da_02);
+            }else if (btn_id == R.id.latihan_dza && tmpStr.equalsIgnoreCase("zal")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.dza_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_dza);
+                selected.setBackgroundResource(R.drawable.dza_02);
+            }else if (btn_id == R.id.latihan_ro && tmpStr.equalsIgnoreCase("rock")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ro_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ro);
+                selected.setBackgroundResource(R.drawable.ro_02);
+            }else if (btn_id == R.id.latihan_za && tmpStr.equalsIgnoreCase("jay")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.za_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_za);
+                selected.setBackgroundResource(R.drawable.za_02);
+            }else if (btn_id == R.id.latihan_za && tmpStr.equalsIgnoreCase("jay")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.za_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_za);
+                selected.setBackgroundResource(R.drawable.za_02);
+            }else if (btn_id == R.id.latihan_sa && tmpStr.equalsIgnoreCase("sin")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.sa_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_sa);
+                selected.setBackgroundResource(R.drawable.sa_02);
+            }else if (btn_id == R.id.latihan_sya && (tmpStr.equalsIgnoreCase("sin") || tmpStr.equalsIgnoreCase("send"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.sya_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_sya);
+                selected.setBackgroundResource(R.drawable.sya_02);
+            }else if (btn_id == R.id.latihan_sho && tmpStr.equalsIgnoreCase("set")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.syo_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_sho);
+                selected.setBackgroundResource(R.drawable.syo_02);
+            }else if (btn_id == R.id.latihan_dho && tmpStr.equalsIgnoreCase("dot")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.dho_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_dho);
+                selected.setBackgroundResource(R.drawable.dho_02);
+            }else if (btn_id == R.id.latihan_to && tmpStr.equalsIgnoreCase("talk")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.tho_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_to);
+                selected.setBackgroundResource(R.drawable.tho_02);
+            }else if (btn_id == R.id.latihan_zo && (tmpStr.equalsIgnoreCase("jo") || tmpStr.equalsIgnoreCase("jok"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.zho_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_zo);
+                selected.setBackgroundResource(R.drawable.zho_02);
+            }else if (btn_id == R.id.latihan_ain && tmpStr.equalsIgnoreCase("i'm")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ain_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ain);
+                selected.setBackgroundResource(R.drawable.ain_02);
+            }else if (btn_id == R.id.latihan_gho && (tmpStr.equalsIgnoreCase("going") || tmpStr.equalsIgnoreCase("goyang"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.gho_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_gho);
+                selected.setBackgroundResource(R.drawable.gho_02);
+            }else if (btn_id == R.id.latihan_fa && (tmpStr.equalsIgnoreCase("va") || tmpStr.equalsIgnoreCase("sa"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.fa_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_fa);
+                selected.setBackgroundResource(R.drawable.fa_02);
+            }else if (btn_id == R.id.latihan_qo && tmpStr.equalsIgnoreCase("coffe")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.qo_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_qo);
+                selected.setBackgroundResource(R.drawable.qo_02);
+            }else if (btn_id == R.id.latihan_ka && tmpStr.equalsIgnoreCase("cafe")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ka_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ka);
+                selected.setBackgroundResource(R.drawable.ka_02);
+            }else if (btn_id == R.id.latihan_la && tmpStr.equalsIgnoreCase("lam")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.la_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_la);
+                selected.setBackgroundResource(R.drawable.la_02);
+            }else if (btn_id == R.id.latihan_ma && tmpStr.equalsIgnoreCase("meme")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ma_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ma);
+                selected.setBackgroundResource(R.drawable.ma_02);
+            }else if (btn_id == R.id.latihan_na && (tmpStr.equalsIgnoreCase("nun") || tmpStr.equalsIgnoreCase("non"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.na_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_na);
+                selected.setBackgroundResource(R.drawable.na_02);
+            }else if (btn_id == R.id.latihan_wa && (tmpStr.equalsIgnoreCase("waw") || tmpStr.equalsIgnoreCase("wow"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.wa_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_wa);
+                selected.setBackgroundResource(R.drawable.wa_02);
+            }else if (btn_id == R.id.latihan_ha && (tmpStr.equalsIgnoreCase("h") || tmpStr.equalsIgnoreCase("ha"))){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ha_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ha);
+                selected.setBackgroundResource(R.drawable.ha_02);
+            }else if (btn_id == R.id.latihan_ya && tmpStr.equalsIgnoreCase("ya")){
+                voiceSuccess();
+                selectedImg.setBackgroundResource(R.drawable.ya_03);
+                selectedBeforeHijayah();
+                selected = (ImageButton)findViewById(R.id.latihan_ya);
+                selected.setBackgroundResource(R.drawable.ya_02);
             }else
                 voiceFailed();
             /*if (tmpStr.equalsIgnoreCase("Alif")){
@@ -128,43 +286,7 @@ public class latihanPelafalan extends AppCompatActivity {
                 selectedBeforeHijayah();
                 selected = (ImageButton)findViewById(R.id.latihan_alif);
                 selected.setBackgroundResource(R.drawable.a_02);
-            }else if (tmpStr.equalsIgnoreCase("Mbak")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.ba_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_ba);
-                selected.setBackgroundResource(R.drawable.ba_02);
-            }else if (tmpStr.equalsIgnoreCase("Tak")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.ta_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_ta);
-                selected.setBackgroundResource(R.drawable.ta_02);
-            }else if (tmpStr.equalsIgnoreCase("hack")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.ha_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_ha);
-                selected.setBackgroundResource(R.drawable.ha_02);
-            }else if (tmpStr.equalsIgnoreCase("coc")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.kho_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_kho);
-                selected.setBackgroundResource(R.drawable.kho_02);
-            }else if (tmpStr.equalsIgnoreCase("dak")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.da_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_da);
-                selected.setBackgroundResource(R.drawable.da_02);
-            }else if (tmpStr.equalsIgnoreCase("rok")){
-                voiceSuccess();
-                selectedImg.setBackgroundResource(R.drawable.ro_03);
-                selectedBeforeHijayah();
-                selected = (ImageButton)findViewById(R.id.latihan_ro);
-                selected.setBackgroundResource(R.drawable.ro_02);
-            }else if (tmpStr.equalsIgnoreCase("za")){
+            else if (tmpStr.equalsIgnoreCase("za")){
                 voiceSuccess();
                 selectedImg.setBackgroundResource(R.drawable.za_03);
                 selectedBeforeHijayah();
