@@ -22,35 +22,24 @@
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/pelafalan_arrowR"
-        android:layout_marginBottom="58dp"
-        android:background="@drawable/arrow_right"
-        android:layout_above="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:onClick="OnButtonPelafalanArrowRightClick" />
-
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:id="@+id/pelafalan_arrowL"
         android:background="@drawable/arrow_left"
-        android:layout_alignTop="@+id/pelafalan_arrowR"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="OnButtonPelafalanArrowLeftClick" />
+        android:onClick="OnButtonPelafalanArrowLeftClick"
+        android:layout_alignTop="@+id/pelafalan_hijayah"
+        android:layout_alignLeft="@+id/pelafalan_hijayah_gho"
+        android:layout_alignStart="@+id/pelafalan_hijayah_gho"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="15dp" />
 
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/pelafalan_btn_home"
         android:background="@drawable/btn_home"
-        android:layout_marginRight="73dp"
-        android:layout_marginEnd="73dp"
+        android:onClick="OnButtonPelafalanBack"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/pelafalan_arrowR"
-        android:layout_toStartOf="@+id/pelafalan_arrowR"
-        android:onClick="OnButtonPelafalanBack" />
+        android:layout_alignRight="@+id/pelafalan_hijayah"
+        android:layout_alignEnd="@+id/pelafalan_hijayah" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -69,10 +58,11 @@
         android:layout_height="40dp"
         android:id="@+id/pelafalan_hijayah_a"
         android:background="@drawable/hijayah_putih_a"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:layout_alignTop="@+id/imageView"
-        android:layout_alignLeft="@+id/pelafalan_arrowR"
-        android:layout_alignStart="@+id/pelafalan_arrowR" />
+        android:layout_toRightOf="@+id/pelafalan_hijayah_za"
+        android:layout_toEndOf="@+id/pelafalan_hijayah_za"
+        android:layout_marginLeft="-15dp" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -81,7 +71,8 @@
         android:background="@drawable/hijayah_putih_ba"
         android:layout_alignTop="@+id/pelafalan_hijayah_a"
         android:layout_toLeftOf="@+id/pelafalan_hijayah_a"
-        android:layout_toStartOf="@+id/pelafalan_hijayah_a" />
+        android:layout_toStartOf="@+id/pelafalan_hijayah_a"
+        android:layout_marginRight="15dp" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -243,7 +234,8 @@
         android:background="@drawable/hijayah_putih_fa"
         android:layout_below="@+id/pelafalan_hijayah_ro"
         android:layout_toRightOf="@+id/pelafalan_hijayah_ba"
-        android:layout_toEndOf="@+id/pelafalan_hijayah_ba" />
+        android:layout_toEndOf="@+id/pelafalan_hijayah_ba"
+        android:layout_marginLeft="-10dp" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -252,7 +244,8 @@
         android:background="@drawable/hijayah_putih_qo"
         android:layout_below="@+id/pelafalan_hijayah_za"
         android:layout_toLeftOf="@+id/pelafalan_hijayah_fa"
-        android:layout_toStartOf="@+id/pelafalan_hijayah_fa" />
+        android:layout_toStartOf="@+id/pelafalan_hijayah_fa"
+        android:layout_marginRight="15dp" />
 
     <ImageButton
         android:layout_width="35dp"
@@ -333,5 +326,16 @@
         android:layout_centerHorizontal="true"
         android:onClick="onCLickAutoPelafalan"
         android:background="@drawable/btn_automatic" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/pelafalan_arrowR"
+        android:background="@drawable/arrow_right"
+        android:onClick="OnButtonPelafalanArrowRightClick"
+        android:layout_marginTop="25dp"
+        android:layout_alignTop="@+id/pelafalan_hijayah"
+        android:layout_toRightOf="@+id/pelafalan_hijayah_sa"
+        android:layout_toEndOf="@+id/pelafalan_hijayah_sa" />
 
 </RelativeLayout>

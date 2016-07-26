@@ -15,8 +15,8 @@ public class Pelafalan extends AppCompatActivity {
 
     ImageView selectedImg;
     ImageView hijayahBesar;
-    ImageButton btn_auto;
-    ImageButton btn_sound;
+    ImageButton btn_auto,btn_sound;
+    ImageButton arrowL, arrowR;
     BackSound stat;
     SoundIqro1 sp;
 
@@ -34,8 +34,12 @@ public class Pelafalan extends AppCompatActivity {
         selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_a);
         btn_auto=(ImageButton)findViewById(R.id.pelafalan_btn_automatic);
         btn_sound=(ImageButton)findViewById(R.id.pelafalan_btn_sound);
+        arrowL=(ImageButton)findViewById(R.id.pelafalan_arrowL);
+        arrowR=(ImageButton)findViewById(R.id.pelafalan_arrowR);
         selectedImg.setBackgroundResource(R.drawable.hijayah_orange_a);
         sp.sound_a.start();
+
+        arrowR.setVisibility(View.GONE);
     }
 
     @Override
@@ -206,6 +210,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_a);
             selectedImg.setBackgroundResource(R.drawable.a_02);
             hijayahBesar.setBackgroundResource(R.drawable.a_03);
+            arrowR.setVisibility(View.GONE);
             sp.sound_a.start();
         }else
         if(selectedImg.getId() == R.id.pelafalan_hijayah_ta){
@@ -408,6 +413,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_haq);
             selectedImg.setBackgroundResource(R.drawable.haq_02);
             hijayahBesar.setBackgroundResource(R.drawable.haq_03);
+            arrowL.setVisibility(View.VISIBLE);
             sp.sound_kha.start();
         }
     }
@@ -427,6 +433,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_ba);
             selectedImg.setBackgroundResource(R.drawable.ba_02);
             hijayahBesar.setBackgroundResource(R.drawable.ba_03);
+            arrowR.setVisibility(View.VISIBLE);
             sp.sound_ba.start();
         }else if(selectedImg.getId() == R.id.pelafalan_hijayah_ba){
             selectedImg.setBackgroundResource(R.drawable.hijayah_putih_ba);
@@ -628,6 +635,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_ya);
             selectedImg.setBackgroundResource(R.drawable.ya_02);
             hijayahBesar.setBackgroundResource(R.drawable.ya_03);
+            arrowL.setVisibility(View.GONE);
             sp.sound_ya.start();
         }
 

@@ -39,7 +39,7 @@ public class latihanPelafalan extends AppCompatActivity {
         selected=(ImageButton) findViewById(R.id.latihan_tempSelected);
         progress = (ProgressBar)findViewById(R.id.progressBar);
         status = (ImageView)findViewById((R.id.latihan_status));
-        txtTemp=(TextView)findViewById(R.id.textView2);
+
         progress.setProgress(0);
         progress.setMax(100);
     }
@@ -102,7 +102,6 @@ public class latihanPelafalan extends AppCompatActivity {
         {
             ArrayList<String> results = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             tmpStr = results.get(0);
-            txtTemp.setText(tmpStr);
 
             if(btn_id == R.id.latihan_alif && tmpStr.equalsIgnoreCase("Alif")){
                 voiceSuccess();
