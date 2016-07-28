@@ -155,7 +155,7 @@ public class GridAdapter2 extends BaseAdapter {
         if(catTitle=="57"){viewHolder.imageView.setImageResource(R.drawable.is_2_yanaro);}
         if(catTitle=="58"){viewHolder.imageView.setImageResource(R.drawable.is_2_ronaro);}
         if(catTitle=="59"){viewHolder.imageView.setImageResource(R.drawable.is_2_yabaro);}
-        if(catTitle=="60"){viewHolder.imageView.setImageResource(R.drawable.is_2_robaro);}
+        if(catTitle=="60"){viewHolder.imageView.setImageResource(R.drawable.is_2_robaya);}
         if(catTitle=="61"){viewHolder.imageView.setImageResource(R.drawable.is_2_danaro);}
         if(catTitle=="62"){viewHolder.imageView.setImageResource(R.drawable.is_2_yadana);}
         if(catTitle=="63"){viewHolder.imageView.setImageResource(R.drawable.is_2_nabaya);}
