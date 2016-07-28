@@ -319,7 +319,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_dho);
             selectedImg.setBackgroundResource(R.drawable.dho_02);
             hijayahBesar.setBackgroundResource(R.drawable.dho_03);
-            sp.sound_dho.start();
+            sp.sound_tho.start();
         }
         else
         if(selectedImg.getId() == R.id.pelafalan_hijayah_zho){
@@ -335,7 +335,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_zho);
             selectedImg.setBackgroundResource(R.drawable.zho_02);
             hijayahBesar.setBackgroundResource(R.drawable.zho_03);
-            sp.sound_tho.start();
+            sp.sound_dho.start();
         }
         else
         if(selectedImg.getId() == R.id.pelafalan_hijayah_gho){
@@ -533,7 +533,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_dho);
             selectedImg.setBackgroundResource(R.drawable.dho_02);
             hijayahBesar.setBackgroundResource(R.drawable.dho_03);
-            sp.sound_dho.start();
+            sp.sound_tho.start();
         }
         else
         if(selectedImg.getId() == R.id.pelafalan_hijayah_dho){
@@ -549,7 +549,7 @@ public class Pelafalan extends AppCompatActivity {
             selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_zho);
             selectedImg.setBackgroundResource(R.drawable.zho_02);
             hijayahBesar.setBackgroundResource(R.drawable.zho_03);
-            sp.sound_tho.start();
+            sp.sound_dho.start();
         }
         else
         if(selectedImg.getId() == R.id.pelafalan_hijayah_zho){
