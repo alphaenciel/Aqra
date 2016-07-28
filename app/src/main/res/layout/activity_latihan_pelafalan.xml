@@ -328,7 +328,8 @@
         android:background="@drawable/btn_rekam_off2"
         android:layout_below="@+id/imageView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-5dp" />
+        android:layout_marginTop="-5dp"
+        android:onClick="onClickLatihanRecord" />
 
     <ImageView
         android:layout_width="200dp"
