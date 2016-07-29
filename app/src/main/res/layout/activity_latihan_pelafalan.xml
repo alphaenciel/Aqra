@@ -377,6 +377,6 @@
         android:layout_above="@+id/progressBar"
         android:layout_toLeftOf="@+id/latihan_instruksi"
         android:layout_toStartOf="@+id/latihan_instruksi"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="15dp" />
 
 </RelativeLayout>
