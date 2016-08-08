@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             SI1.SoundPlayer25(this,R.raw.sp4);
             SI1.SoundPlayer26(this,R.raw.sp28);
             SI1.SoundPlayer27(this,R.raw.sp5);
-            SI1.SoundPlayer28(this,R.raw.sp_26);
+            SI1.SoundPlayer28(this,R.raw.sp26);
              i = new Intent(MainActivity.this, Pelafalan.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);

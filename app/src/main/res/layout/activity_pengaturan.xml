@@ -109,7 +109,7 @@
         android:layout_below="@+id/btn_persyaratan_pelanggan"
         android:layout_toRightOf="@+id/btn_twitter"
         android:layout_toEndOf="@+id/btn_twitter"
-        android:layout_marginLeft="-2dp" />
+        android:layout_marginLeft="-20dp" />
 
     <SeekBar
         android:layout_width="200dp"
