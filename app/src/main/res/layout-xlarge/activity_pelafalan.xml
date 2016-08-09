@@ -11,8 +11,8 @@
     android:background="@drawable/bg_pelafalan_huruf_hijaiyah2">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:id="@+id/imageView"
         android:background="@drawable/bg_huruf_hijaiyah2"
         android:layout_above="@+id/pelafalan_btn_home"
@@ -20,42 +20,39 @@
         android:layout_alignParentEnd="true" />
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/pelafalan_arrowL"
         android:background="@drawable/arrow_left"
         android:onClick="OnButtonPelafalanArrowLeftClick"
         android:layout_alignTop="@+id/pelafalan_hijayah"
-        android:layout_alignLeft="@+id/pelafalan_hijayah_gho"
-        android:layout_alignStart="@+id/pelafalan_hijayah_gho"
-        android:layout_marginTop="27dp"
-        android:layout_marginLeft="15dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
 
     <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:id="@+id/pelafalan_btn_home"
         android:background="@drawable/btn_home"
         android:onClick="OnButtonPelafalanBack"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/pelafalan_hijayah"
-        android:layout_alignEnd="@+id/pelafalan_hijayah" />
+        android:layout_alignRight="@+id/pelafalan_btn_automatic"
+        android:layout_alignEnd="@+id/pelafalan_btn_automatic" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:id="@+id/pelafalan_btn_sound"
         android:background="@drawable/btn_sound"
-        android:layout_marginRight="34dp"
-        android:layout_marginEnd="34dp"
-        android:layout_alignTop="@+id/pelafalan_btn_home"
-        android:layout_toLeftOf="@+id/pelafalan_btn_home"
-        android:layout_toStartOf="@+id/pelafalan_btn_home"
-        android:onClick="OnButtonPelafalanBack" />
+        android:onClick="OnButtonPelafalanBack"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/pelafalan_btn_automatic"
+        android:layout_alignStart="@+id/pelafalan_btn_automatic" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_a"
         android:background="@drawable/hijayah_putih_a"
         android:layout_marginTop="30dp"
@@ -65,8 +62,8 @@
         android:layout_marginLeft="-15dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ba"
         android:background="@drawable/hijayah_putih_ba"
         android:layout_alignTop="@+id/pelafalan_hijayah_a"
@@ -75,8 +72,8 @@
         android:layout_marginRight="15dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ta"
         android:background="@drawable/hijayah_putih_ta"
         android:layout_alignTop="@+id/pelafalan_hijayah_ba"
@@ -84,8 +81,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ba" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_tsa"
         android:background="@drawable/hijayah_putih_tsa"
         android:layout_alignTop="@+id/pelafalan_hijayah_ta"
@@ -93,8 +90,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ta" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ja"
         android:background="@drawable/hijayah_putih_ja"
         android:layout_alignTop="@+id/pelafalan_hijayah_tsa"
@@ -102,8 +99,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_tsa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ha"
         android:background="@drawable/hijayah_putih_ha"
         android:layout_alignTop="@+id/pelafalan_hijayah_ja"
@@ -111,8 +108,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ja" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_kho"
         android:background="@drawable/hijayah_putih_kho"
         android:layout_alignTop="@+id/pelafalan_hijayah_ha"
@@ -120,8 +117,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ha" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_da"
         android:background="@drawable/hijayah_putih_da"
         android:layout_alignTop="@+id/pelafalan_hijayah_kho"
@@ -129,8 +126,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_kho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_dza"
         android:background="@drawable/hijayah_putih_dza"
         android:layout_alignTop="@+id/pelafalan_hijayah_da"
@@ -138,8 +135,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_da" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ro"
         android:background="@drawable/hijayah_putih_ro"
         android:layout_below="@+id/pelafalan_hijayah_a"
@@ -147,8 +144,8 @@
         android:layout_alignParentEnd="true" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_za"
         android:background="@drawable/hijayah_putih_za"
         android:layout_below="@+id/pelafalan_hijayah_a"
@@ -156,8 +153,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ro" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_sa"
         android:background="@drawable/hijayah_putih_sa"
         android:layout_below="@+id/pelafalan_hijayah_ba"
@@ -165,8 +162,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_za" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_sya"
         android:background="@drawable/hijayah_putih_sya"
         android:layout_below="@+id/pelafalan_hijayah_ta"
@@ -174,8 +171,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_sa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_sho"
         android:background="@drawable/hijayah_putih_syo"
         android:layout_above="@+id/pelafalan_hijayah_ka"
@@ -183,8 +180,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_sya" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_dho"
         android:background="@drawable/hijayah_putih_dho"
         android:layout_below="@+id/pelafalan_hijayah_ja"
@@ -192,8 +189,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_sho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_tho"
         android:background="@drawable/hijayah_putih_tho"
         android:layout_below="@+id/pelafalan_hijayah_ha"
@@ -201,8 +198,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_dho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_zho"
         android:background="@drawable/hijayah_putih_zho"
         android:layout_below="@+id/pelafalan_hijayah_kho"
@@ -210,8 +207,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_tho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ain"
         android:background="@drawable/hijayah_putih_ain"
         android:layout_above="@+id/pelafalan_hijayah_haq"
@@ -219,8 +216,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_zho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_gho"
         android:background="@drawable/hijayah_putih_gho"
         android:layout_above="@+id/pelafalan_hijayah_ya"
@@ -228,8 +225,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ain" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_fa"
         android:background="@drawable/hijayah_putih_fa"
         android:layout_below="@+id/pelafalan_hijayah_ro"
@@ -238,8 +235,8 @@
         android:layout_marginLeft="-10dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_qo"
         android:background="@drawable/hijayah_putih_qo"
         android:layout_below="@+id/pelafalan_hijayah_za"
@@ -248,8 +245,8 @@
         android:layout_marginRight="15dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ka"
         android:background="@drawable/hijayah_putih_ka"
         android:layout_below="@+id/pelafalan_hijayah_sa"
@@ -257,8 +254,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_qo" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_la"
         android:background="@drawable/hijayah_putih_la"
         android:layout_alignTop="@+id/pelafalan_hijayah_ka"
@@ -266,8 +263,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ka" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ma"
         android:background="@drawable/hijayah_putih_ma"
         android:layout_below="@+id/pelafalan_hijayah_sho"
@@ -275,8 +272,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_la" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_na"
         android:background="@drawable/hijayah_putih_na"
         android:layout_below="@+id/pelafalan_hijayah_dho"
@@ -284,8 +281,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_ma" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_wa"
         android:background="@drawable/hijayah_putih_wa"
         android:layout_alignTop="@+id/pelafalan_hijayah_na"
@@ -293,8 +290,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_na" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_haq"
         android:background="@drawable/hijayah_putih_haq"
         android:layout_alignTop="@+id/pelafalan_hijayah_wa"
@@ -302,8 +299,8 @@
         android:layout_toStartOf="@+id/pelafalan_hijayah_wa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="75dp"
+        android:layout_height="80dp"
         android:id="@+id/pelafalan_hijayah_ya"
         android:background="@drawable/hijayah_putih_ya"
         android:layout_below="@+id/pelafalan_hijayah_ain"
@@ -311,31 +308,30 @@
         android:layout_alignStart="@+id/pelafalan_hijayah_dza" />
 
     <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/pelafalan_hijayah"
+        android:background="@drawable/a_03"
+        android:layout_above="@+id/pelafalan_btn_automatic"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:id="@+id/pelafalan_btn_automatic"
+        android:onClick="onCLickAutoPelafalan"
+        android:background="@drawable/btn_automatic"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/pelafalan_hijayah"
-        android:layout_above="@+id/pelafalan_btn_automatic"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/a_03" />
-
-    <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:id="@+id/pelafalan_btn_automatic"
-        android:layout_above="@+id/pelafalan_hijayah_a"
-        android:layout_centerHorizontal="true"
-        android:onClick="onCLickAutoPelafalan"
-        android:background="@drawable/btn_automatic" />
-
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:id="@+id/pelafalan_arrowR"
         android:background="@drawable/arrow_right"
         android:onClick="OnButtonPelafalanArrowRightClick"
-        android:layout_marginTop="25dp"
-        android:layout_alignTop="@+id/pelafalan_hijayah"
-        android:layout_toRightOf="@+id/pelafalan_hijayah_sa"
-        android:layout_toEndOf="@+id/pelafalan_hijayah_sa" />
+        android:layout_alignTop="@+id/pelafalan_arrowL"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

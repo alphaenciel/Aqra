@@ -9,8 +9,8 @@
     android:background="@drawable/bg_pengaturan">
 
     <ImageButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="128dp"
+        android:layout_height="100dp"
         android:id="@+id/back_pengaturan"
         android:background="@drawable/btn_pengaturan"
         android:layout_alignParentBottom="true"
@@ -19,40 +19,42 @@
         android:onClick="onButtonPengaturanClick" />
 
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imageButton"
         android:background="@drawable/music_note"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_above="@+id/back_pengaturan"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="290dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginBottom="360dp" />
 
     <ImageView
-        android:layout_width="20dp"
-        android:layout_height="25dp"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
         android:id="@+id/imageButton2"
         android:background="@drawable/audio_volume"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginTop="52dp"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignRight="@+id/imageButton"
+        android:layout_alignEnd="@+id/imageButton" />
 
     <ImageButton
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_twitter"
         android:background="@drawable/btn_twitter"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
         android:layout_below="@+id/imageButton2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="50dp" />
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton" />
 
     <ImageButton
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_instagram"
         android:background="@drawable/btn_instagram"
         android:layout_alignTop="@+id/btn_twitter"
@@ -61,8 +63,8 @@
         android:layout_marginLeft="5dp" />
 
     <ImageButton
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_gmail"
         android:background="@drawable/btn_gmail"
         android:layout_alignTop="@+id/btn_instagram"
@@ -71,8 +73,8 @@
         android:layout_marginLeft="5dp" />
 
     <ImageButton
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_facebook"
         android:background="@drawable/btn_facebook"
         android:layout_alignTop="@+id/btn_gmail"
@@ -81,8 +83,8 @@
         android:layout_marginLeft="5dp" />
 
     <ImageButton
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
         android:id="@+id/btn_persyaratan_pelanggan"
         android:background="@drawable/btn_persyaratan_pelanggan"
         android:layout_below="@+id/btn_twitter"
@@ -92,43 +94,47 @@
         android:layout_marginRight="2dp" />
 
     <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="48dp"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
         android:id="@+id/btn_kebijakan_pribadi"
         android:background="@drawable/btn_kebijakan_pribadi"
-        android:layout_above="@+id/btn_pelayanan_pelanggan"
-        android:layout_toLeftOf="@+id/back_pengaturan"
-        android:layout_toStartOf="@+id/back_pengaturan"
-        android:layout_marginRight="2dp" />
+        android:layout_alignBottom="@+id/btn_persyaratan_pelanggan"
+        android:layout_toRightOf="@+id/btn_persyaratan_pelanggan"
+        android:layout_toEndOf="@+id/btn_persyaratan_pelanggan" />
 
     <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="325dp"
+        android:layout_height="70dp"
         android:id="@+id/btn_pelayanan_pelanggan"
         android:background="@drawable/btn_pelayanan_pelanggan"
         android:layout_below="@+id/btn_persyaratan_pelanggan"
-        android:layout_toRightOf="@+id/btn_twitter"
-        android:layout_toEndOf="@+id/btn_twitter"
-        android:layout_marginLeft="-20dp" />
+        android:layout_alignLeft="@+id/btn_twitter"
+        android:layout_alignStart="@+id/btn_twitter"
+        android:layout_marginLeft="20dp" />
 
     <SeekBar
-        android:layout_width="200dp"
+        android:layout_width="475dp"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar1"
         android:progressDrawable="@drawable/progress"
-        android:layout_alignTop="@+id/imageButton"
         android:visibility="visible"
         android:thumb="@drawable/thumb"
-        android:layout_marginLeft="50dp" />
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_alignLeft="@+id/btn_twitter"
+        android:layout_alignStart="@+id/btn_twitter"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="-15dp" />
 
     <SeekBar
-        android:layout_width="200dp"
+        android:layout_width="475dp"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar2"
         android:progressDrawable="@drawable/progress"
         android:visibility="visible"
-        android:layout_alignBottom="@+id/imageButton2"
         android:thumb="@drawable/thumb"
-        android:layout_marginLeft="50dp" />
+        android:layout_alignBottom="@+id/imageButton2"
+        android:layout_alignLeft="@+id/seekBar1"
+        android:layout_alignStart="@+id/seekBar1"
+        android:layout_marginBottom="15dp" />
 
 </RelativeLayout>
