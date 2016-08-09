@@ -11,8 +11,8 @@
     android:background="@drawable/bg_latihan_pelafalan2">
 
     <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:id="@+id/latihan_btnHome"
         android:background="@drawable/btn_home"
         android:onClick="OnButtonPelafalanBack"
@@ -20,25 +20,25 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/hasil_rekam"
-        android:layout_marginTop="147dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/imageView3"
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:id="@+id/imageView3"
         android:background="@drawable/bg_huruf_hijaiyah2"
-        android:layout_below="@+id/hasil_rekam"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/latihan_btnRekam"
+        android:layout_toRightOf="@+id/latihan_tempSelected"
+        android:layout_toEndOf="@+id/latihan_tempSelected"
+        android:layout_marginBottom="-10dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_alif"
         android:background="@drawable/hijayah_putih_a"
         android:onClick="OnButtonPelafalanClick"
@@ -50,8 +50,8 @@
         android:layout_marginEnd="15dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ba"
         android:background="@drawable/hijayah_putih_ba"
         android:onClick="OnButtonPelafalanClick"
@@ -60,8 +60,8 @@
         android:layout_toStartOf="@+id/latihan_alif" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ta"
         android:background="@drawable/hijayah_putih_ta"
         android:onClick="OnButtonPelafalanClick"
@@ -70,8 +70,8 @@
         android:layout_toStartOf="@+id/latihan_ba" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_tsa"
         android:background="@drawable/hijayah_putih_tsa"
         android:onClick="OnButtonPelafalanClick"
@@ -80,8 +80,8 @@
         android:layout_toStartOf="@+id/latihan_ta" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ja"
         android:background="@drawable/hijayah_putih_ja"
         android:onClick="OnButtonPelafalanClick"
@@ -90,8 +90,8 @@
         android:layout_toStartOf="@+id/latihan_tsa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ha"
         android:background="@drawable/hijayah_putih_ha"
         android:onClick="OnButtonPelafalanClick"
@@ -100,8 +100,8 @@
         android:layout_toStartOf="@+id/latihan_ja" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_kho"
         android:background="@drawable/hijayah_putih_kho"
         android:onClick="OnButtonPelafalanClick"
@@ -110,8 +110,8 @@
         android:layout_toStartOf="@+id/latihan_ha" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_da"
         android:background="@drawable/hijayah_putih_da"
         android:onClick="OnButtonPelafalanClick"
@@ -120,8 +120,8 @@
         android:layout_toStartOf="@+id/latihan_kho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_dza"
         android:background="@drawable/hijayah_putih_dza"
         android:onClick="OnButtonPelafalanClick"
@@ -130,8 +130,8 @@
         android:layout_toStartOf="@+id/latihan_da" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ro"
         android:background="@drawable/hijayah_putih_ro"
         android:onClick="OnButtonPelafalanClick"
@@ -140,8 +140,8 @@
         android:layout_alignEnd="@+id/imageView3" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_za"
         android:background="@drawable/hijayah_putih_za"
         android:onClick="OnButtonPelafalanClick"
@@ -150,8 +150,8 @@
         android:layout_toStartOf="@+id/latihan_ro" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_sa"
         android:background="@drawable/hijayah_putih_sa"
         android:onClick="OnButtonPelafalanClick"
@@ -160,8 +160,8 @@
         android:layout_toStartOf="@+id/latihan_za" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_sya"
         android:background="@drawable/hijayah_putih_sya"
         android:onClick="OnButtonPelafalanClick"
@@ -170,8 +170,8 @@
         android:layout_toStartOf="@+id/latihan_sa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_sho"
         android:background="@drawable/hijayah_putih_syo"
         android:onClick="OnButtonPelafalanClick"
@@ -180,8 +180,8 @@
         android:layout_toStartOf="@+id/latihan_sya" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_dho"
         android:background="@drawable/hijayah_putih_dho"
         android:onClick="OnButtonPelafalanClick"
@@ -190,8 +190,8 @@
         android:layout_toStartOf="@+id/latihan_sho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_to"
         android:background="@drawable/hijayah_putih_tho"
         android:onClick="OnButtonPelafalanClick"
@@ -200,8 +200,8 @@
         android:layout_toStartOf="@+id/latihan_dho" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_zo"
         android:background="@drawable/hijayah_putih_zho"
         android:onClick="OnButtonPelafalanClick"
@@ -210,8 +210,8 @@
         android:layout_toStartOf="@+id/latihan_to" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ain"
         android:background="@drawable/hijayah_putih_ain"
         android:onClick="OnButtonPelafalanClick"
@@ -220,8 +220,8 @@
         android:layout_toStartOf="@+id/latihan_zo" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_gho"
         android:background="@drawable/hijayah_putih_gho"
         android:onClick="OnButtonPelafalanClick"
@@ -230,8 +230,8 @@
         android:layout_toStartOf="@+id/latihan_ain" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_fa"
         android:background="@drawable/hijayah_putih_fa"
         android:onClick="OnButtonPelafalanClick"
@@ -241,8 +241,8 @@
         android:layout_marginLeft="5dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_qo"
         android:background="@drawable/hijayah_putih_qo"
         android:onClick="OnButtonPelafalanClick"
@@ -252,8 +252,8 @@
         android:layout_marginLeft="5dp" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ka"
         android:background="@drawable/hijayah_putih_ka"
         android:onClick="OnButtonPelafalanClick"
@@ -262,8 +262,8 @@
         android:layout_toStartOf="@+id/latihan_qo" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_la"
         android:background="@drawable/hijayah_putih_la"
         android:onClick="OnButtonPelafalanClick"
@@ -272,8 +272,8 @@
         android:layout_toStartOf="@+id/latihan_ka" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ma"
         android:background="@drawable/hijayah_putih_ma"
         android:onClick="OnButtonPelafalanClick"
@@ -282,8 +282,8 @@
         android:layout_toStartOf="@+id/latihan_la" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_na"
         android:background="@drawable/hijayah_putih_na"
         android:onClick="OnButtonPelafalanClick"
@@ -292,8 +292,8 @@
         android:layout_toStartOf="@+id/latihan_ma" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_wa"
         android:background="@drawable/hijayah_putih_wa"
         android:onClick="OnButtonPelafalanClick"
@@ -302,8 +302,8 @@
         android:layout_toStartOf="@+id/latihan_na" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_haq"
         android:background="@drawable/hijayah_putih_haq"
         android:onClick="OnButtonPelafalanClick"
@@ -312,8 +312,8 @@
         android:layout_toStartOf="@+id/latihan_wa" />
 
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
         android:id="@+id/latihan_ya"
         android:background="@drawable/hijayah_putih_ya"
         android:onClick="OnButtonPelafalanClick"
@@ -322,46 +322,42 @@
         android:layout_toStartOf="@+id/latihan_haq" />
 
     <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:id="@+id/latihan_btnRekam"
         android:background="@drawable/btn_rekam_off2"
-        android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-5dp"
-        android:onClick="onClickLatihanRecord" />
+        android:onClick="onClickLatihanRecord"
+        android:layout_above="@+id/latihan_instruksi"
+        android:layout_toLeftOf="@+id/latihan_tsa"
+        android:layout_toStartOf="@+id/latihan_tsa" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="90dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:id="@+id/latihan_instruksi"
         android:background="@drawable/ket_rekam_audio2"
-        android:layout_centerHorizontal="true"
         android:layout_above="@+id/latihan_btnHome"
-        android:layout_toRightOf="@+id/latihan_ain"
-        android:layout_toEndOf="@+id/latihan_ain"
-        android:layout_marginBottom="10dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
 
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="140dp"
         android:id="@+id/latihan_status"
-        android:layout_alignTop="@+id/latihan_instruksi"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="-8dp" />
+        android:layout_alignBottom="@+id/latihan_instruksi"
+        android:layout_toRightOf="@+id/latihan_ka"
+        android:layout_toEndOf="@+id/latihan_ka" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
         android:id="@+id/progressBar"
         android:progressDrawable="@drawable/blueprogress"
-        android:layout_alignBottom="@+id/latihan_status"
-        android:layout_alignRight="@+id/latihan_ya"
-        android:layout_alignEnd="@+id/latihan_ya"
-        android:layout_marginRight="-10dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginLeft="5dp" />
 
     <ImageButton
         android:layout_width="0dp"
@@ -369,14 +365,15 @@
         android:id="@+id/latihan_tempSelected" />
 
     <TextView
-        android:layout_width="80dp"
-        android:layout_height="25dp"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView"
         android:background="@drawable/text_ketepatan_rate"
-        android:layout_above="@+id/progressBar"
-        android:layout_toLeftOf="@+id/latihan_instruksi"
-        android:layout_toStartOf="@+id/latihan_instruksi"
-        android:layout_marginRight="15dp" />
+        android:layout_alignTop="@+id/latihan_instruksi"
+        android:layout_toLeftOf="@+id/latihan_zo"
+        android:layout_toStartOf="@+id/latihan_zo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="-25dp" />
 
 </RelativeLayout>

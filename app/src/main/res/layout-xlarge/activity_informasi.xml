@@ -8,8 +8,8 @@
     tools:context="com.alpha.aqra.Informasi">
 
     <ImageButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
         android:id="@+id/back_informasi"
         android:background="@drawable/btn_informasi2"
         android:layout_alignParentBottom="true"
