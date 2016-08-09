@@ -11,8 +11,8 @@
     android:background="@drawable/bg_latihan_pelafalan2">
 
     <ImageButton
-        android:layout_width="60dp"
-        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:id="@+id/latihan_btnHome"
         android:background="@drawable/btn_home"
         android:onClick="OnButtonPelafalanBack"
@@ -329,16 +329,16 @@
         android:onClick="onClickLatihanRecord"
         android:layout_above="@+id/latihan_instruksi"
         android:layout_toLeftOf="@+id/latihan_tsa"
-        android:layout_toStartOf="@+id/latihan_tsa" />
+        android:layout_toStartOf="@+id/latihan_tsa"
+        android:layout_marginTop="5dp" />
 
     <ImageView
-        android:layout_width="300dp"
+        android:layout_width="375dp"
         android:layout_height="150dp"
         android:id="@+id/latihan_instruksi"
         android:background="@drawable/ket_rekam_audio2"
         android:layout_above="@+id/latihan_btnHome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="150dp"
@@ -366,7 +366,7 @@
 
     <TextView
         android:layout_width="150dp"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/textView"
         android:background="@drawable/text_ketepatan_rate"

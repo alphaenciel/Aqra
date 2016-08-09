@@ -20,6 +20,9 @@ public class Pelafalan extends AppCompatActivity {
     BackSound stat;
     SoundIqro1 sp;
 
+    SharedPreferences spiqro;
+    int iqroIntValue, iqrotempValue;
+
     Handler h = new Handler();
     int delay = 1000; //milliseconds
     int stop = 0;
@@ -30,6 +33,7 @@ public class Pelafalan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pelafalan);
+
         hijayahBesar = (ImageView) findViewById(R.id.pelafalan_hijayah);
         selectedImg=(ImageView)findViewById(R.id.pelafalan_hijayah_a);
         btn_auto=(ImageButton)findViewById(R.id.pelafalan_btn_automatic);
@@ -37,6 +41,11 @@ public class Pelafalan extends AppCompatActivity {
         arrowL=(ImageButton)findViewById(R.id.pelafalan_arrowL);
         arrowR=(ImageButton)findViewById(R.id.pelafalan_arrowR);
         selectedImg.setBackgroundResource(R.drawable.hijayah_orange_a);
+
+        spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+        iqrotempValue = iqroIntValue;
+
         sp.sound_a.start();
 
         arrowR.setVisibility(View.GONE);
@@ -45,12 +54,16 @@ public class Pelafalan extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-        SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor1 = spiqro.edit();
-        editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+        editor1.putInt("iqro_int_key",iqrotempValue);
         editor1.commit();
+
+        SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+        int musicIntValue=0;
+        musicIntValue = spmusic.getInt("music_int_key",-1);
+        stat.setCurrVolume(musicIntValue);
         stat.SoundPlayer(this,R.raw.intro);
+
         Intent i = new Intent(Pelafalan.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
@@ -87,12 +100,16 @@ public class Pelafalan extends AppCompatActivity {
     }
     public void OnButtonPelafalanBack(View v){
         if(v.getId() == R.id.pelafalan_btn_home){
-            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
             SharedPreferences.Editor editor1 = spiqro.edit();
-            editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+            editor1.putInt("iqro_int_key",iqrotempValue);
             editor1.commit();
+
+            SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+            int musicIntValue=0;
+            musicIntValue = spmusic.getInt("music_int_key",-1);
+            stat.setCurrVolume(musicIntValue);
             stat.SoundPlayer(this,R.raw.intro);
+
             Intent i = new Intent(Pelafalan.this,MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -127,21 +144,15 @@ public class Pelafalan extends AppCompatActivity {
             sp.sound_za.stop();sp.sound_za.release();
             sp.sound_wa.stop();sp.sound_wa.release();
         }else if(v.getId() == R.id.pelafalan_btn_sound){
-            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-            int iqroIntValue = spiqro.getInt("iqro_int_key", -1);
-            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
             if(iqroIntValue > 1 ){
                 btn_sound.setBackgroundResource(R.drawable.btn_mute);
-                SharedPreferences.Editor editor = sptemp.edit();
-                editor.putInt("music_temp_int_key", iqroIntValue);
-                editor.commit();
                 SharedPreferences.Editor editor1 = spiqro.edit();
                 editor1.putInt("iqro_int_key",1);
                 editor1.commit();
             }
             else if(iqroIntValue <= 1 ){
                 SharedPreferences.Editor editor1 = spiqro.edit();
-                editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+                editor1.putInt("iqro_int_key",iqrotempValue);
                 editor1.commit();
                 btn_sound.setBackgroundResource(R.drawable.btn_sound);
             }
@@ -149,34 +160,6 @@ public class Pelafalan extends AppCompatActivity {
             float log1= (float) (1-(Math.log(100-iqroIntValue)/Math.log(100)));
             sp = new SoundIqro1();
             sp.setVolumeMute(log1);
-            /*sp.sound_a.setVolume(log1,log1);
-            sp.sound_ain.setVolume(log1,log1);
-            sp.sound_ba.setVolume(log1,log1);
-            sp.sound_da.setVolume(log1,log1);
-            sp.sound_dho.setVolume(log1,log1);
-            sp.sound_dza.setVolume(log1,log1);
-            sp.sound_fa.setVolume(log1,log1);
-            sp.sound_gho.setVolume(log1,log1);
-            sp.sound_ha.setVolume(log1,log1);
-            sp.sound_ho.setVolume(log1,log1);
-            sp.sound_jai.setVolume(log1,log1);
-            sp.sound_ka.setVolume(log1,log1);
-            sp.sound_kha.setVolume(log1,log1);
-            sp.sound_la.setVolume(log1,log1);
-            sp.sound_ma.setVolume(log1,log1);
-            sp.sound_na.setVolume(log1,log1);
-            sp.sound_qo.setVolume(log1,log1);
-            sp.sound_ro.setVolume(log1,log1);
-            sp.sound_sa.setVolume(log1,log1);
-            sp.sound_sya.setVolume(log1,log1);
-            sp.sound_syo.setVolume(log1,log1);
-            sp.sound_ta.setVolume(log1,log1);
-            sp.sound_tho.setVolume(log1,log1);
-            sp.sound_to.setVolume(log1,log1);
-            sp.sound_tsa.setVolume(log1,log1);
-            sp.sound_ya.setVolume(log1,log1);
-            sp.sound_za.setVolume(log1,log1);
-            sp.sound_wa.setVolume(log1,log1);*/
         }
 
     }

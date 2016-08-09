@@ -1,6 +1,8 @@
 package com.alpha.aqra;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +12,8 @@ public class MetodeIqro extends AppCompatActivity {
     BackSound stat;
     SoundIqro1 SI1;
     SoundIqro2 SI2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +127,10 @@ public class MetodeIqro extends AppCompatActivity {
             startActivity(i);
             finish();
         }else if(v.getId() == R.id.btn_home_iqro){
+            SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+            int musicIntValue=0;
+            musicIntValue = spmusic.getInt("music_int_key",-1);
+            stat.setCurrVolume(musicIntValue);
             stat.SoundPlayer(this,R.raw.intro);
             Intent i = new Intent(MetodeIqro.this,MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

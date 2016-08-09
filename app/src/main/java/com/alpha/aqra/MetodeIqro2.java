@@ -22,6 +22,10 @@ public class MetodeIqro2 extends FragmentActivity {
     public PageIndicator mIndicator;
     private ViewPager awesomePager;
     private PagerAdapter pm;
+
+    SharedPreferences spiqro;
+    int iqroIntValue, iqrotempValue;
+
     BackSound stat;
     SoundIqro2 soundIqro2;
     ImageButton btn_sound;
@@ -40,6 +44,11 @@ public class MetodeIqro2 extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metode_iqro2);
+
+        spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
+        iqroIntValue = spiqro.getInt("iqro_int_key", -1);
+        iqrotempValue = iqroIntValue;
+
         awesomePager = (ViewPager) findViewById(R.id.pager2);
         mIndicator = (PageIndicator) findViewById(R.id.pagerIndicator2);
         btn_sound=(ImageButton)findViewById(R.id.btnSound2);
@@ -129,12 +138,16 @@ public class MetodeIqro2 extends FragmentActivity {
     }
     public void OnClickSlideIqro2(View v){
         if(v.getId() == R.id.btnBackHome2) {
-            SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-            SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
             SharedPreferences.Editor editor1 = spiqro.edit();
-            editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+            editor1.putInt("iqro_int_key",iqrotempValue);
             editor1.commit();
+
+            SharedPreferences spmusic = getSharedPreferences("music_prefs", Activity.MODE_PRIVATE);
+            int musicIntValue=0;
+            musicIntValue = spmusic.getInt("music_int_key",-1);
+            stat.setCurrVolume(musicIntValue);
             stat.SoundPlayer(getApplicationContext(),R.raw.intro);
+
             Intent i = new Intent(MetodeIqro2.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -296,7 +309,6 @@ public class MetodeIqro2 extends FragmentActivity {
             SharedPreferences.Editor editor1 = spiqro.edit();
             editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
             editor1.commit();
-            stat.SoundPlayer(getApplicationContext(),R.raw.intro);
             Intent i = new Intent(MetodeIqro2.this, MetodeIqro.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -370,10 +382,8 @@ public class MetodeIqro2 extends FragmentActivity {
     }
     @Override
     public void onBackPressed() {
-        SharedPreferences spiqro = getSharedPreferences("iqro_prefs", Activity.MODE_PRIVATE);
-        SharedPreferences sptemp = getSharedPreferences("temp_sound_prefs", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor1 = spiqro.edit();
-        editor1.putInt("iqro_int_key",sptemp.getInt("music_temp_int_key", -1));
+        editor1.putInt("iqro_int_key",iqrotempValue);
         editor1.commit();
         Intent i = new Intent(MetodeIqro2.this,MetodeIqro.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
